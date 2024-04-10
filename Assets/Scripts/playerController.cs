@@ -1,0 +1,80 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class playerController : MonoBehaviour
+{
+
+    // vars
+    public float runSpeed;
+
+    Rigidbody myRB;
+    Animator myAnim;
+
+    bool facingRight;
+
+    public bool isAlive = true;
+
+    bool grounded = false;
+    Collider[] enemyCollisions;
+    Collider[] groundCollisions;
+    Collider[] laserCollisions;
+    Collider[] lightCollisions;
+    float groundCheckRadius = 0.2f;
+    public LayerMask enemyLayer;
+    public LayerMask groundLayer;
+    public LayerMask laserLayer;
+    public LayerMask lightLayer;
+    public Transform groundCheck;
+    public float jumpHeight;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        myRB = GetComponent<Rigidbody>();
+        myAnim = GetComponent<Animator>();
+        facingRight = true;
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+
+    void FixedUpdate()
+    {
+        if (grounded && Input.GetAxis("Jump")>0) {
+            grounded = false;
+            myAnim.SetBool("grounded", grounded);
+            myRB.AddForce(new Vector3(0, jumpHeight, 0));
+        }
+
+        enemyCollisions = Physics.OverlapSphere(myRB.position, groundCheckRadius, enemyLayer);
+        laserCollisions = Physics.OverlapSphere(myRB.position, groundCheckRadius, laserLayer);
+        lightCollisions = Physics.OverlapSphere(myRB.position, groundCheckRadius, lightLayer);
+
+        groundCollisions = Physics.OverlapSphere(groundCheck.position, groundCheckRadius, groundLayer);
+        if (groundCollisions.Length > 0) grounded = true;
+        else grounded = false;
+
+        if (enemyCollisions.Length > 0 && lightCollisions.Length > 0) isAlive = false;
+        if (laserCollisions.Length > 0) isAlive = false;
+
+        myAnim.SetBool("grounded", grounded);
+
+        float move = Input.GetAxis("Horizontal");
+        myAnim.SetFloat("speed", Mathf.Abs(move));
+
+        myRB.velocity = new Vector3(move * runSpeed, myRB.velocity.y, 0);
+
+        if (move>0 && !facingRight) Flip();
+        else if (move<0 && facingRight) Flip();
+    }
+
+    void Flip()
+    {
+        facingRight = !facingRight;
+        transform.Rotate(Vector3.up, 180.0f, Space.World);
+    }
+}
