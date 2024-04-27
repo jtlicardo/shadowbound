@@ -17,7 +17,7 @@ public class PressurePLate : MonoBehaviour
     {
         boxCollisions = Physics.OverlapSphere(myRB.position, boxCheckRadius, boxLayer);
 
-        if (boxCollisions.Length > 0) Debug.Log("Laser disabled");
+        if (boxCollisions.Length > 0) isEnabled = false;
         else isEnabled = true;
     }
     void Start()
