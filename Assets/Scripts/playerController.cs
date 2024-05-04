@@ -16,6 +16,7 @@ public class playerController : MonoBehaviour
     public bool isAlive = true;
 
     bool grounded = false;
+    Collider[] bodyGroundCollisions;
     Collider[] enemyCollisions;
     Collider[] groundCollisions;
     Collider[] laserCollisions;
@@ -26,6 +27,7 @@ public class playerController : MonoBehaviour
     public LayerMask laserLayer;
     public LayerMask lightLayer;
     public Transform groundCheck;
+    public Transform bodyGroundCheck;
     public float jumpHeight;
 
     // Start is called before the first frame update
@@ -44,6 +46,7 @@ public class playerController : MonoBehaviour
 
     void FixedUpdate()
     {
+        bodyGroundCollisions = Physics.OverlapSphere(bodyGroundCheck.position, 1.2f, groundLayer);
         if (grounded && Input.GetAxis("Jump")>0) {
             grounded = false;
             myAnim.SetBool("grounded", grounded);
@@ -65,9 +68,8 @@ public class playerController : MonoBehaviour
 
         float move = Input.GetAxis("Horizontal");
         myAnim.SetFloat("speed", Mathf.Abs(move));
-
-        myRB.velocity = new Vector3(move * runSpeed, myRB.velocity.y, 0);
-
+        if (bodyGroundCollisions.Length < 1) myRB.velocity = new Vector3(move * runSpeed, myRB.velocity.y, 0);
+        
         if (move>0 && !facingRight) Flip();
         else if (move<0 && facingRight) Flip();
     }
