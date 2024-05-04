@@ -15,7 +15,6 @@ public class Laser : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-         Debug.Log(pressurePlate.isEnabled);
         if (!pressurePlate.isEnabled && isEnabled) {
             isEnabled = false;
             Vector3 newPosition = transform.position;
