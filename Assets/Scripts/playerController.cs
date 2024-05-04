@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour
     public bool isAlive = true;
 
     public float runSpeed;
-    
+
     public float jumpHeight;
 
     private Rigidbody myRB;
@@ -16,14 +16,15 @@ public class PlayerController : MonoBehaviour
     private bool facingRight;
 
     public bool IsCrouching { get; private set; } = false;
-    bool grounded = false;
+    public bool IsGrounded { get; set; } = false;
+
     Collider[] bodyGroundCollisions;
     Collider[] bodyBoxCollisions;
     Collider[] enemyCollisions;
     Collider[] groundCollisions;
     Collider[] laserCollisions;
     Collider[] lightCollisions;
-    float groundCheckRadius = 0.2f;
+    private readonly float groundCheckRadius = 0.2f;
     public LayerMask boxLayer;
     public LayerMask enemyLayer;
     public LayerMask groundLayer;
@@ -32,10 +33,13 @@ public class PlayerController : MonoBehaviour
     public Transform groundCheck;
     public Transform bodyGroundCheck;
 
+    private CapsuleCollider capsuleCollider;
+
     void Start()
     {
         myRB = GetComponent<Rigidbody>();
         myAnim = GetComponent<Animator>();
+        capsuleCollider = GetComponent<CapsuleCollider>();
         facingRight = true;
     }
 
@@ -48,9 +52,9 @@ public class PlayerController : MonoBehaviour
     {
         bodyGroundCollisions = Physics.OverlapSphere(bodyGroundCheck.position, 1.2f, groundLayer);
         bodyBoxCollisions = Physics.OverlapSphere(groundCheck.position, 0.5f, boxLayer);
-        if (grounded && Input.GetAxis("Jump")>0 && bodyBoxCollisions.Length < 1) {
-            grounded = false;
-            myAnim.SetBool("grounded", grounded);
+        if (IsGrounded && Input.GetAxis("Jump")>0 && bodyBoxCollisions.Length < 1) {
+            IsGrounded = false;
+            myAnim.SetBool("grounded", IsGrounded);
             myRB.AddForce(new Vector3(0, jumpHeight, 0));
         }
 
@@ -60,13 +64,13 @@ public class PlayerController : MonoBehaviour
         groundCollisions = Physics.OverlapSphere(groundCheck.position, groundCheckRadius, groundLayer);
 
         groundCollisions = Physics.OverlapSphere(groundCheck.position, groundCheckRadius, groundLayer);
-        if (groundCollisions.Length > 0 || bodyBoxCollisions.Length > 0) grounded = true;
-        else grounded = false;
+        if (groundCollisions.Length > 0 || bodyBoxCollisions.Length > 0) IsGrounded = true;
+        else IsGrounded = false;
 
         if (enemyCollisions.Length > 0 && lightCollisions.Length > 0) isAlive = false;
         if (laserCollisions.Length > 0) isAlive = false;
 
-        myAnim.SetBool("grounded", grounded);
+        myAnim.SetBool("grounded", IsGrounded);
 
         float move = Input.GetAxis("Horizontal");
         myAnim.SetFloat("speed", Mathf.Abs(move));
