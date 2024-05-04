@@ -6,9 +6,10 @@ using UnityEngine.SceneManagement;
 
 public class RestartGame : MonoBehaviour
 {
-    public playerController Player;
+    public PlayerController Player;
     public GameObject DeathScreen;
     public string restartSceneName;
+
     public void Restart()
     {
         SceneManager.LoadScene(restartSceneName);
@@ -20,7 +21,7 @@ public class RestartGame : MonoBehaviour
     void Update()
     {
         Time.timeScale = 1f;
-        if(!Player.isAlive)
+        if (!Player.isAlive)
         {
             Time.timeScale = 0f;
             DeathScreen.SetActive(true);

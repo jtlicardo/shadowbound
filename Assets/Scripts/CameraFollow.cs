@@ -1,31 +1,26 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class CameraFollow : MonoBehaviour
 {
-
     public Transform target;
     public float smoothing = 5f;
+    public float crouchOffset = 0.5f;
 
-    Vector3 offset;
+    private PlayerController player;
+    private Vector3 offset;
 
-    // Start is called before the first frame update
+    Vector3 TargetPosition => target.position + offset;
+
     void Start()
     {
+        player = target.GetComponent<PlayerController>();
         offset = transform.position - target.position;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     void FixedUpdate()
     {
-        Vector3 targetCamPos = target.position + offset;
-
-        transform.position = Vector3.Lerp(new Vector3(transform.position.x, (float)(transform.position.y + 0.3), transform.position.z), targetCamPos, smoothing * Time.deltaTime);
+        // Adjust camera position if the player is crouching
+        Vector3 targetPos = player != null && player.IsCrouching ? TargetPosition - Vector3.up * crouchOffset : TargetPosition;
+        transform.position = Vector3.Lerp(transform.position, targetPos, smoothing * Time.fixedDeltaTime);
     }
 }
