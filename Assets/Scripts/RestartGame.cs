@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class RestartGame : MonoBehaviour
 {
-    public playerController Player;
+    public PlayerController Player;
     public GameObject DeathScreen;
     public string restartSceneName;
 
