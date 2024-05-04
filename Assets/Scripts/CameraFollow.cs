@@ -6,14 +6,14 @@ public class CameraFollow : MonoBehaviour
     public float smoothing = 5f;
     public float crouchOffset = 0.5f;
 
-    private playerController player;
+    private PlayerController player;
     private Vector3 offset;
 
     Vector3 TargetPosition => target.position + offset;
 
     void Start()
     {
-        player = target.GetComponent<playerController>();
+        player = target.GetComponent<PlayerController>();
         offset = transform.position - target.position;
     }
 
