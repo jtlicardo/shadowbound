@@ -5,18 +5,18 @@ using UnityEngine.AI;
 
 public class EnemyAI : MonoBehaviour
 {
-    NavMeshAgent agent;
     public Transform[] waypoints;
-    int waypointIndex;
-    Vector3 target;
-    // Start is called before the first frame update
+    
+    private NavMeshAgent agent;
+    private int waypointIndex;
+    private Vector3 target;
+
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
         UpdateDestination();
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (!agent.pathPending && !agent.hasPath && agent.remainingDistance < 0.1f)

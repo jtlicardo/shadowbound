@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5928300009178751905}
   - component: {fileID: 5928300009182143361}
   - component: {fileID: 5928300009181045057}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Corridor Beams Wide
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -54,6 +54,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -65,6 +66,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -89,7 +91,7 @@ GameObject:
   - component: {fileID: 5928300009182143363}
   - component: {fileID: 5928300009181045059}
   - component: {fileID: 1454772777587143804}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Corridor Ceiling Wide
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -132,6 +134,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -143,6 +146,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -223,6 +227,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -234,6 +239,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -270,7 +276,7 @@ GameObject:
   - component: {fileID: 5928300009178751911}
   - component: {fileID: 5928300009182143367}
   - component: {fileID: 5928300009181045063}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Corridor Piipes Wide
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -314,6 +320,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -325,6 +332,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -350,7 +358,7 @@ GameObject:
   - component: {fileID: 5928300009181045065}
   - component: {fileID: 1325675181631285722}
   - component: {fileID: 318588748888946886}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Corridor Walls Wide
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -393,6 +401,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -404,6 +413,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -451,7 +461,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5928300009178751915}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Corridor Wide
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -489,7 +499,7 @@ GameObject:
   - component: {fileID: 5928300009178751917}
   - component: {fileID: 5928300009182143371}
   - component: {fileID: 5928300009181045067}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Lights001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -532,6 +542,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -543,6 +554,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0

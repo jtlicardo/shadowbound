@@ -9,8 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7477967184759821569}
-  m_Layer: 0
-  m_Name: Corridor Cross Section
+  m_Layer: 8
+  m_Name: Corridor 4-Way
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -49,7 +49,7 @@ GameObject:
   - component: {fileID: 7477967184759051553}
   - component: {fileID: 7477967184757921761}
   - component: {fileID: 5848004960516982623}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tunnel Floor005
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,6 +92,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -103,6 +104,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -139,7 +141,7 @@ GameObject:
   - component: {fileID: 7477967184759821573}
   - component: {fileID: 7477967184759051555}
   - component: {fileID: 7477967184757921763}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tunnel Piipes005
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -183,6 +185,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -194,6 +197,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -218,7 +222,7 @@ GameObject:
   - component: {fileID: 7477967184759051557}
   - component: {fileID: 7477967184757921765}
   - component: {fileID: 6652492802129995255}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tunnel Walls005
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -261,6 +265,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -272,6 +277,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -294,9 +300,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 4
   m_Convex: 0
-  m_CookingOptions: 14
+  m_CookingOptions: 30
   m_Mesh: {fileID: 4300012, guid: 685f3c2516b9d3041970058318a5c349, type: 3}
 --- !u!1 &7477967184759916841
 GameObject:
@@ -309,7 +315,7 @@ GameObject:
   - component: {fileID: 7477967184759821577}
   - component: {fileID: 7477967184759051561}
   - component: {fileID: 7477967184757921769}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SciFi_WallLight021
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -352,6 +358,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -363,6 +370,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -386,7 +394,7 @@ GameObject:
   - component: {fileID: 7477967184759821579}
   - component: {fileID: 7477967184759051563}
   - component: {fileID: 7477967184757921771}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SciFi_WallLightBulb021
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -429,6 +437,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -440,6 +449,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -463,7 +473,7 @@ GameObject:
   - component: {fileID: 7477967184759821581}
   - component: {fileID: 7477967184759051565}
   - component: {fileID: 7477967184757921773}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tunnel Beams005
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -506,6 +516,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -517,6 +528,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -541,7 +553,7 @@ GameObject:
   - component: {fileID: 7477967184759051567}
   - component: {fileID: 7477967184757921775}
   - component: {fileID: 1571912133642144072}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tunnel Ceiling005
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -584,6 +596,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -595,6 +608,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -617,7 +631,7 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 4
   m_Convex: 0
-  m_CookingOptions: 14
+  m_CookingOptions: 30
   m_Mesh: {fileID: 4300006, guid: 685f3c2516b9d3041970058318a5c349, type: 3}

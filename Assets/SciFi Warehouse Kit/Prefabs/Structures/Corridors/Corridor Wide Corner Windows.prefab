@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4804555236838379878}
   - component: {fileID: 4804555236834988376}
   - component: {fileID: 4804555236836086680}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Lights005
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -54,6 +54,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -65,6 +66,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -88,7 +90,7 @@ GameObject:
   - component: {fileID: 4804555236838379888}
   - component: {fileID: 4804555236834988368}
   - component: {fileID: 4804555236836086672}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Corridor Piipes Wide004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -132,6 +134,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -143,6 +146,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -210,6 +214,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -221,6 +226,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -243,9 +249,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 4
   m_Convex: 0
-  m_CookingOptions: 14
+  m_CookingOptions: 30
   m_Mesh: {fileID: 4300008, guid: 86e0494e75e2b6243960cc0cbf7c207f, type: 3}
 --- !u!1 &4804555236838018388
 GameObject:
@@ -259,7 +265,7 @@ GameObject:
   - component: {fileID: 4804555236834988372}
   - component: {fileID: 4804555236836086676}
   - component: {fileID: 7691038954652114415}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Corridor Ceiling Wide004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -302,6 +308,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -313,6 +320,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -335,9 +343,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 4
   m_Convex: 0
-  m_CookingOptions: 14
+  m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 86e0494e75e2b6243960cc0cbf7c207f, type: 3}
 --- !u!1 &4804555236838018390
 GameObject:
@@ -350,7 +358,7 @@ GameObject:
   - component: {fileID: 4804555236838379894}
   - component: {fileID: 4804555236834988374}
   - component: {fileID: 4804555236836086678}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Corridor Beams Wide004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -393,6 +401,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -404,6 +413,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -427,7 +437,7 @@ GameObject:
   - component: {fileID: 4804555236838379896}
   - component: {fileID: 4804555236834988378}
   - component: {fileID: 4804555236836086682}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Corridor Window Muntinbar003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -470,6 +480,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -481,6 +492,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -504,7 +516,7 @@ GameObject:
   - component: {fileID: 4804555236838379898}
   - component: {fileID: 4804555236834988380}
   - component: {fileID: 4804555236836086684}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Corridor Window Glass003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -547,6 +559,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -558,6 +571,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -579,8 +593,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4804555236838379900}
-  m_Layer: 0
-  m_Name: Corridor Wide Angle Windows
+  m_Layer: 8
+  m_Name: Corridor Wide Corner Windows
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -620,7 +634,7 @@ GameObject:
   - component: {fileID: 4804555236834988382}
   - component: {fileID: 4804555236836086686}
   - component: {fileID: 12677323263105982}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Corridor Walls Wide Window003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -663,6 +677,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -674,6 +689,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -696,7 +712,7 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 4
   m_Convex: 0
-  m_CookingOptions: 14
+  m_CookingOptions: 30
   m_Mesh: {fileID: 4300014, guid: 86e0494e75e2b6243960cc0cbf7c207f, type: 3}

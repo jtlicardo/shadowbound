@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 9219857709248101536}
   - component: {fileID: 9219857709247331462}
   - component: {fileID: 9219857709246201414}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Corridor Window Glass004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -54,6 +54,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -65,6 +66,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -88,7 +90,7 @@ GameObject:
   - component: {fileID: 9219857709248101538}
   - component: {fileID: 9219857709247331456}
   - component: {fileID: 9219857709246201408}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Corridor Window Muntinbar004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -131,6 +133,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -142,6 +145,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -166,7 +170,7 @@ GameObject:
   - component: {fileID: 9219857709247331460}
   - component: {fileID: 9219857709246201412}
   - component: {fileID: 4424845118994524329}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Corridor Walls Wide Window004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -209,6 +213,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -220,6 +225,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -242,9 +248,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 4
   m_Convex: 0
-  m_CookingOptions: 14
+  m_CookingOptions: 30
   m_Mesh: {fileID: 4300014, guid: 13921b5f98eda9c47b248ee239841bb1, type: 3}
 --- !u!1 &9219857709248454790
 GameObject:
@@ -255,7 +261,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9219857709248101542}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Corridor Wide Windows
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -339,6 +345,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -350,6 +357,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -386,7 +394,7 @@ GameObject:
   - component: {fileID: 9219857709248101546}
   - component: {fileID: 9219857709247331466}
   - component: {fileID: 9219857709246201418}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Corridor Piipes Wide
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -430,6 +438,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -441,6 +450,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -464,7 +474,7 @@ GameObject:
   - component: {fileID: 9219857709248101548}
   - component: {fileID: 9219857709247331468}
   - component: {fileID: 9219857709246201420}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Corridor Beams Wide
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -507,6 +517,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -518,6 +529,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -542,7 +554,7 @@ GameObject:
   - component: {fileID: 9219857709247331470}
   - component: {fileID: 9219857709246201422}
   - component: {fileID: 6018381144155015986}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Corridor Ceiling Wide
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -585,6 +597,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -596,6 +609,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -632,7 +646,7 @@ GameObject:
   - component: {fileID: 9219857709248101564}
   - component: {fileID: 9219857709247331458}
   - component: {fileID: 9219857709246201410}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Lights001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -675,6 +689,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -686,6 +701,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
