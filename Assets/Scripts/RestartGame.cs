@@ -7,11 +7,11 @@ using UnityEngine.SceneManagement;
 public class RestartGame : MonoBehaviour
 {
     public playerController Player;
-    public GameObject Death;
     public GameObject DeathScreen;
+    public string restartSceneName;
     public void Restart()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(restartSceneName);
     }
     public void MainMenu()
     {
