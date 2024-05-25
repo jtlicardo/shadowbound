@@ -21,7 +21,7 @@ public class RestartGame : MonoBehaviour
     void Update()
     {
         Time.timeScale = 1f;
-        if (!Player.isAlive)
+        if (Player != null && !Player.isAlive)
         {
             Time.timeScale = 0f;
             DeathScreen.SetActive(true);
