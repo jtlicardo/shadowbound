@@ -25,6 +25,7 @@ public class PlayerController : MonoBehaviour
     Collider[] laserCollisions;
     Collider[] droneCollisions;
     Collider[] lightCollisions;
+    Collider[] securityCameraCollisions;
     private readonly float groundCheckRadius = 0.2f;
     public LayerMask boxLayer;
     public LayerMask droneLayer;
@@ -32,10 +33,14 @@ public class PlayerController : MonoBehaviour
     public LayerMask groundLayer;
     public LayerMask laserLayer;
     public LayerMask lightLayer;
+    public LayerMask securityCameraLayer;
     public Transform groundCheck;
     public Transform bodyGroundCheck;
     public Transform StartingPoint;
     private CapsuleCollider capsuleCollider;
+
+    private float securityCameraDetectionTimer = 0f;
+    private bool isDetectedByCamera = false;
 
     void Start()
     {
@@ -76,11 +81,12 @@ public class PlayerController : MonoBehaviour
         groundCollisions = Physics.OverlapSphere(groundCheck.position, groundCheckRadius, groundLayer);
         IsGrounded = groundCollisions.Length > 0 || bodyBoxCollisions.Length > 0;
 
-        // Check for collisions with drones, enemies, lasers, and lights
+        // Check for collisions with security cameras, drones, enemies, lasers, and lights
         droneCollisions = Physics.OverlapSphere(myRB.position, 1.2f, droneLayer);
         enemyCollisions = Physics.OverlapSphere(myRB.position, groundCheckRadius, enemyLayer);
         laserCollisions = Physics.OverlapSphere(myRB.position, groundCheckRadius, laserLayer);
         lightCollisions = Physics.OverlapSphere(myRB.position, groundCheckRadius, lightLayer);
+        securityCameraCollisions = Physics.OverlapSphere(myRB.position, 1.2f, securityCameraLayer);
 
         if (enemyCollisions.Length > 0 && lightCollisions.Length > 0 ||
             laserCollisions.Length > 0)
@@ -95,6 +101,25 @@ public class PlayerController : MonoBehaviour
         if (droneCollisions.Length > 0 && move != 0)
         {
             isAlive = false;
+        }
+
+        // The player is detected by the security camera if standing in the camera's field of view for more than 1 second
+        if (lightCollisions.Length > 0 && securityCameraCollisions.Length > 0)
+        {
+            if (!isDetectedByCamera)
+            {
+                isDetectedByCamera = true;
+                securityCameraDetectionTimer = Time.fixedTime;
+            }
+            else if (Time.fixedTime - securityCameraDetectionTimer > 1.0f)
+            {
+                isAlive = false;
+            }
+        }
+        else
+        {
+            isDetectedByCamera = false;
+            securityCameraDetectionTimer = 0f;
         }
 
         myAnim.SetFloat("speed", Mathf.Abs(move));
