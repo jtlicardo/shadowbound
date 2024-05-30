@@ -6,7 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class PressurePLate : MonoBehaviour
 {
-    Rigidbody myRB;
+    public Transform checkpoint;
+    public PlayerController player;
     public bool isEnabled = true;
     public GameObject Box;
     Collider[] boxCollisions;
@@ -15,13 +16,18 @@ public class PressurePLate : MonoBehaviour
 
     void Update()
     {
-        boxCollisions = Physics.OverlapSphere(myRB.position, boxCheckRadius, boxLayer);
+        if (isEnabled) {
+            boxCollisions = Physics.OverlapSphere(transform.position, boxCheckRadius, boxLayer);
 
-        if (boxCollisions.Length > 0) isEnabled = false;
-        else isEnabled = true;
+            if (boxCollisions.Length > 0) {
+                isEnabled = false;
+                player.setCheckpoint(checkpoint.position);
+            } 
+            else isEnabled = true;
+        }
     }
     void Start()
     {
-        myRB = GetComponent<Rigidbody>();
+
     }
 }
