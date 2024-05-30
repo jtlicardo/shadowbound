@@ -47,7 +47,10 @@ MonoBehaviour:
   jumpHeight: 280
   boxLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 8192
+  droneLayer:
+    serializedVersion: 2
+    m_Bits: 16384
   enemyLayer:
     serializedVersion: 2
     m_Bits: 1024
@@ -62,6 +65,7 @@ MonoBehaviour:
     m_Bits: 2048
   groundCheck: {fileID: 123246420411435203}
   bodyGroundCheck: {fileID: 5120785249658557554}
+  StartingPoint: {fileID: 0}
 --- !u!1 &2641002353541196850
 GameObject:
   m_ObjectHideFlags: 0
@@ -184,36 +188,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2285680492609567170}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &9151001440395226917
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2388597552774478167}
-  m_Layer: 0
-  m_Name: StartingPoint
-  m_TagString: Untagged
-  m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2388597552774478167
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9151001440395226917}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 2285680492609567170}
-  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1743710204303056425
 PrefabInstance:
