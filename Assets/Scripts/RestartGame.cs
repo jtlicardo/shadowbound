@@ -12,9 +12,9 @@ public class RestartGame : MonoBehaviour
 
     public void Restart()
     {
-        Player.respawn();
         Time.timeScale = 1f;
         DeathScreen.SetActive(false);
+        Player.respawn();
     }
     public void MainMenu()
     {
@@ -22,9 +22,9 @@ public class RestartGame : MonoBehaviour
     }
     void Update()
     {
-        Time.timeScale = 1f;
         if (Player != null && !Player.isAlive)
         {
+            Debug.Log("RestartGame Update");
             Time.timeScale = 0f;
             DeathScreen.SetActive(true);
             Cursor.lockState = CursorLockMode.None;

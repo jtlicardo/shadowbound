@@ -57,8 +57,12 @@ public class PlayerController : MonoBehaviour
     }
 
     public void respawn() {
-        isAlive = true;
         transform.position = StartingPoint.position;
+        isAlive = true;
+    }
+
+    private void die() {
+        isAlive = false;
     }
 
     void Update()
@@ -91,7 +95,7 @@ public class PlayerController : MonoBehaviour
         if (enemyCollisions.Length > 0 && lightCollisions.Length > 0 ||
             laserCollisions.Length > 0)
         {
-            isAlive = false;
+            die();
         }
 
         myAnim.SetBool("grounded", IsGrounded);
@@ -100,7 +104,7 @@ public class PlayerController : MonoBehaviour
 
         if (droneCollisions.Length > 0 && move != 0)
         {
-            isAlive = false;
+            die();
         }
 
         // The player is detected by the security camera if standing in the camera's field of view for more than 1 second
@@ -113,7 +117,7 @@ public class PlayerController : MonoBehaviour
             }
             else if (Time.fixedTime - securityCameraDetectionTimer > 1.0f)
             {
-                isAlive = false;
+                die();
             }
         }
         else
