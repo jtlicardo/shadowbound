@@ -23,9 +23,11 @@ public class PlayerController : MonoBehaviour
     Collider[] enemyCollisions;
     Collider[] groundCollisions;
     Collider[] laserCollisions;
+    Collider[] droneCollisions;
     Collider[] lightCollisions;
     private readonly float groundCheckRadius = 0.2f;
     public LayerMask boxLayer;
+    public LayerMask droneLayer;
     public LayerMask enemyLayer;
     public LayerMask groundLayer;
     public LayerMask laserLayer;
@@ -65,7 +67,8 @@ public class PlayerController : MonoBehaviour
         groundCollisions = Physics.OverlapSphere(groundCheck.position, groundCheckRadius, groundLayer);
         IsGrounded = groundCollisions.Length > 0 || bodyBoxCollisions.Length > 0;
 
-        // Check for collisions with enemies, lasers, and lights
+        // Check for collisions with drones, enemies, lasers, and lights
+        droneCollisions = Physics.OverlapSphere(myRB.position, 2f, droneLayer);
         enemyCollisions = Physics.OverlapSphere(myRB.position, groundCheckRadius, enemyLayer);
         laserCollisions = Physics.OverlapSphere(myRB.position, groundCheckRadius, laserLayer);
         lightCollisions = Physics.OverlapSphere(myRB.position, groundCheckRadius, lightLayer);
@@ -79,6 +82,12 @@ public class PlayerController : MonoBehaviour
         myAnim.SetBool("grounded", IsGrounded);
 
         float move = Input.GetAxis("Horizontal");
+
+        if (droneCollisions.Length > 0 && move != 0)
+        {
+            isAlive = false;
+        }
+
         myAnim.SetFloat("speed", Mathf.Abs(move));
         if (bodyGroundCollisions.Length < 1 || groundCollisions.Length > 0) myRB.velocity = new Vector3(move * runSpeed, myRB.velocity.y, 0);
 
