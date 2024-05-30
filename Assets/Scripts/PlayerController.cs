@@ -34,7 +34,7 @@ public class PlayerController : MonoBehaviour
     public LayerMask lightLayer;
     public Transform groundCheck;
     public Transform bodyGroundCheck;
-    public Transform StartingPoint;
+    public Vector3 StartingPoint;
     private CapsuleCollider capsuleCollider;
 
     void Start()
@@ -44,7 +44,16 @@ public class PlayerController : MonoBehaviour
         capsuleCollider = GetComponent<CapsuleCollider>();
         facingRight = true;
 
-        transform.Translate(StartingPoint ? StartingPoint.localPosition : Vector3.zero, Space.Self);
+        //transform.Translate(StartingPoint ? StartingPoint.localPosition : Vector3.zero, Space.Self);
+    }
+
+    public void setCheckpoint(Vector3 position) {
+        StartingPoint = position;
+    }
+
+    public void respawn() {
+        isAlive = true;
+        transform.position = StartingPoint;
     }
 
     void Update()

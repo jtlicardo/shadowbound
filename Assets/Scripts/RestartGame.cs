@@ -12,7 +12,9 @@ public class RestartGame : MonoBehaviour
 
     public void Restart()
     {
-        SceneManager.LoadScene(restartSceneName);
+        Player.respawn();
+        Time.timeScale = 1f;
+        DeathScreen.SetActive(false);
     }
     public void MainMenu()
     {
