@@ -21102,6 +21102,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 13
       objectReference: {fileID: 0}
+    - target: {fileID: 387364091424724237, guid: aedebdaeae12a6743b39120d2f5156b0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3691659005178554142, guid: aedebdaeae12a6743b39120d2f5156b0,
         type: 3}
       propertyPath: m_RootOrder
@@ -29121,7 +29126,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 941af31b0bee26e44a1dcf0e3fede4cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  checkpoint: {fileID: 102121888}
+  checkpoint: {fileID: 61492985}
   player: {fileID: 2016471125}
   isEnabled: 1
   Box: {fileID: 0}
@@ -55718,7 +55723,7 @@ MonoBehaviour:
     m_Bits: 0
   groundCheck: {fileID: 967294172}
   bodyGroundCheck: {fileID: 1214364468}
-  StartingPoint: {fileID: 102121888}
+  StartingPoint: {fileID: 996497717}
 --- !u!4 &2016471127 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 8cf152a0a06b3dc47a7c6d40918d95a9,
