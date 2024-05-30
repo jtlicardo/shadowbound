@@ -4554,6 +4554,16 @@ PrefabInstance:
       objectReference: {fileID: 1748392167}
     - target: {fileID: 6112066583732040182, guid: 2b28d1f63ff60bb47a5faa362eed35a8,
         type: 3}
+      propertyPath: boxLayer.m_Bits
+      value: 8192
+      objectReference: {fileID: 0}
+    - target: {fileID: 6112066583732040182, guid: 2b28d1f63ff60bb47a5faa362eed35a8,
+        type: 3}
+      propertyPath: droneLayer.m_Bits
+      value: 16384
+      objectReference: {fileID: 0}
+    - target: {fileID: 6112066583732040182, guid: 2b28d1f63ff60bb47a5faa362eed35a8,
+        type: 3}
       propertyPath: securityCameraLayer.m_Bits
       value: 32768
       objectReference: {fileID: 0}
