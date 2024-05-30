@@ -43,7 +43,7 @@ public class PlayerController : MonoBehaviour
         myAnim = GetComponent<Animator>();
         capsuleCollider = GetComponent<CapsuleCollider>();
         facingRight = true;
-
+        respawn();
         //transform.Translate(StartingPoint ? StartingPoint.localPosition : Vector3.zero, Space.Self);
     }
 
@@ -77,7 +77,7 @@ public class PlayerController : MonoBehaviour
         IsGrounded = groundCollisions.Length > 0 || bodyBoxCollisions.Length > 0;
 
         // Check for collisions with drones, enemies, lasers, and lights
-        droneCollisions = Physics.OverlapSphere(myRB.position, 2f, droneLayer);
+        droneCollisions = Physics.OverlapSphere(myRB.position, 1.2f, droneLayer);
         enemyCollisions = Physics.OverlapSphere(myRB.position, groundCheckRadius, enemyLayer);
         laserCollisions = Physics.OverlapSphere(myRB.position, groundCheckRadius, laserLayer);
         lightCollisions = Physics.OverlapSphere(myRB.position, groundCheckRadius, lightLayer);
