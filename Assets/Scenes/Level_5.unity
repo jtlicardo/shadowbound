@@ -2645,7 +2645,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 91695502}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 137.57, y: -21, z: -18.793}
+  m_LocalPosition: {x: 137.57, y: -23, z: -18.793}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2742,7 +2742,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 93292570}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 177, y: -20.909998, z: -18.793}
+  m_LocalPosition: {x: 177, y: -22.909998, z: -18.793}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -15509,7 +15509,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 574473740}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 137.57, y: -21, z: -18.793}
+  m_LocalPosition: {x: 137.57, y: -23, z: -18.793}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -22944,7 +22944,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 941af31b0bee26e44a1dcf0e3fede4cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  checkpoint: {fileID: 102121888}
+  checkpoint: {fileID: 504993955}
   player: {fileID: 2016471125}
   isEnabled: 1
   Box: {fileID: 0}
@@ -30683,7 +30683,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1087180313}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 137.57, y: -21, z: -18.793}
+  m_LocalPosition: {x: 137, y: -23, z: -18.793}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -52565,7 +52565,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1885237739}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 176, y: -21, z: -18.793}
+  m_LocalPosition: {x: 176, y: -23, z: -18.793}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -55723,7 +55723,7 @@ MonoBehaviour:
     m_Bits: 0
   groundCheck: {fileID: 967294172}
   bodyGroundCheck: {fileID: 1214364468}
-  StartingPoint: {fileID: 996497717}
+  StartingPoint: {fileID: 1830006866}
 --- !u!4 &2016471127 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 8cf152a0a06b3dc47a7c6d40918d95a9,
@@ -56446,7 +56446,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2065941475}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 176, y: -21, z: -18.793}
+  m_LocalPosition: {x: 176, y: -23, z: -18.793}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
