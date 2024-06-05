@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour
     private Animator myAnim;
 
     private bool facingRight;
+    private bool canDie = true;
 
     public bool IsCrouching { get; private set; } = false;
     public bool IsGrounded { get; set; } = false;
@@ -63,10 +64,21 @@ public class PlayerController : MonoBehaviour
     public void respawn() {
         transform.position = StartingPoint.position;
         isAlive = true;
+        StartCoroutine(revive());
     }
 
     private void die() {
-        isAlive = false;
+        if (canDie) {
+            isAlive = false;
+            canDie = false;
+        }
+    }
+
+    IEnumerator revive()
+    {
+        yield return new WaitForSecondsRealtime(1);
+        Debug.Log("test"); 
+        canDie = true;
     }
 
     void Update()
