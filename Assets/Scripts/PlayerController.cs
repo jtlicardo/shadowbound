@@ -18,6 +18,9 @@ public class PlayerController : MonoBehaviour
     public bool IsCrouching { get; private set; } = false;
     public bool IsGrounded { get; set; } = false;
 
+    public AudioClip moveSound;
+    private AudioSource audioSource;
+
     Collider[] bodyGroundCollisions;
     Collider[] bodyBoxCollisions;
     Collider[] enemyCollisions;
@@ -44,6 +47,7 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         myRB = GetComponent<Rigidbody>();
         myAnim = GetComponent<Animator>();
         capsuleCollider = GetComponent<CapsuleCollider>();
@@ -102,6 +106,9 @@ public class PlayerController : MonoBehaviour
 
         float move = Input.GetAxis("Horizontal");
 
+        if (move != 0 && IsGrounded) PlaySound(moveSound);
+        else audioSource.Stop();
+
         if (droneCollisions.Length > 0 && move != 0)
         {
             die();
@@ -139,5 +146,16 @@ public class PlayerController : MonoBehaviour
             facingRight = !facingRight;
             transform.Rotate(Vector3.up, 180.0f, Space.World);
         }
+    }
+
+    private void PlaySound(AudioClip clip)
+    {
+        if (audioSource.isPlaying && audioSource.clip == clip)
+        {
+            return;
+        }
+
+        audioSource.clip = clip;
+        audioSource.Play();
     }
 }
