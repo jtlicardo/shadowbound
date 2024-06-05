@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class PressurePLate : MonoBehaviour
 {
+    private AudioSource audioSource;
     public Transform checkpoint;
     public PlayerController player;
     public bool isEnabled = true;
@@ -22,12 +23,20 @@ public class PressurePLate : MonoBehaviour
             if (boxCollisions.Length > 0) {
                 isEnabled = false;
                 player.setCheckpoint(checkpoint.position);
+                PlaySound();
             } 
             else isEnabled = true;
         }
     }
     void Start()
     {
-
+        audioSource = GetComponent<AudioSource>();
+    }
+    public void PlaySound()
+    {
+        if (audioSource != null && audioSource.clip != null)
+        {
+            audioSource.Play();
+        }
     }
 }
