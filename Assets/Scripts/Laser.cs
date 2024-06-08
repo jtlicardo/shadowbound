@@ -4,13 +4,8 @@ using UnityEngine;
 
 public class Laser : MonoBehaviour
 {
-    public PressurePLate pressurePlate;
+    public PressurePlate pressurePlate;
     private bool isEnabled = true; 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()

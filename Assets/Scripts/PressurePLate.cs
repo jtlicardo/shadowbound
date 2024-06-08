@@ -4,10 +4,10 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 
-public class PressurePLate : MonoBehaviour
+public class PressurePlate : MonoBehaviour
 {
     private AudioSource audioSource;
-    public Transform checkpoint;
+    public Transform checkpoint; // Optional checkpoint
     public PlayerController player;
     public bool isEnabled = true;
     public GameObject Box;
@@ -22,7 +22,13 @@ public class PressurePLate : MonoBehaviour
 
             if (boxCollisions.Length > 0) {
                 isEnabled = false;
-                player.setCheckpoint(checkpoint.position);
+
+                // Only set the checkpoint if it exists
+                if (checkpoint != null)
+                {
+                    player.setCheckpoint(checkpoint.position);
+                }
+
                 PlaySound();
             } 
             else isEnabled = true;
