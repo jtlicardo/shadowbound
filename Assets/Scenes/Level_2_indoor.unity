@@ -8725,9 +8725,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 789b87d7ad29f4846a6cec480d879008, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player: {fileID: 0}
+  Player: {fileID: 1185582277}
   DeathScreen: {fileID: 1801447976}
-  restartSceneName: Level_2_outdoor
+  restartSceneName: Level_2_indoor
 --- !u!4 &1361266874
 Transform:
   m_ObjectHideFlags: 0
@@ -11223,7 +11223,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.1, y: 0.10000004, z: 1.1000003}
+  m_Size: {x: 1, y: 1, z: 1.1000003}
   m_Center: {x: 0, y: 0, z: 0.5000001}
 --- !u!120 &1682647113
 LineRenderer:
