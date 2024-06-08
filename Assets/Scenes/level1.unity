@@ -2544,7 +2544,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 313509011}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4, y: 0.46048084, z: 3}
+  m_LocalPosition: {x: 48, y: 0.46048084, z: 3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -10497,13 +10497,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 941af31b0bee26e44a1dcf0e3fede4cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  checkpoint: {fileID: 1249631169}
-  player: {fileID: 2108716066}
+  checkpoint: {fileID: 0}
+  player: {fileID: 0}
   isEnabled: 1
-  Box: {fileID: 1606287962}
+  Box: {fileID: 0}
   boxLayer:
     serializedVersion: 2
-    m_Bits: 8192
+    m_Bits: 0
 --- !u!82 &1215239773
 AudioSource:
   m_ObjectHideFlags: 0
@@ -11966,7 +11966,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7961f9d807cefb4d9c2fc2bd1950f28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pressurePlate: {fileID: 1790487617}
+  pressurePlate: {fileID: 0}
 --- !u!65 &1384672683
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -17033,7 +17033,7 @@ MonoBehaviour:
   checkpoint: {fileID: 313509012}
   player: {fileID: 2108716066}
   isEnabled: 1
-  Box: {fileID: 1606287962}
+  Box: {fileID: 0}
   boxLayer:
     serializedVersion: 2
     m_Bits: 8192
@@ -18129,6 +18129,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1872381440
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1872381436}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55915109792557945a88701b15c80560, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1875471446
 PrefabInstance:
   m_ObjectHideFlags: 0
