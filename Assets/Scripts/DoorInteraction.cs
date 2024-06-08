@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Video;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -10,18 +11,49 @@ public class DoorInteraction : MonoBehaviour
     public Animator fadeAnimator; // animator component of the fade panel
     public string nextSceneName;
     private bool playerInRange = false;
+    public VideoPlayer videoPlayer;
+    private bool videoStarted = false;
 
     private void Update()
     {
-        if (playerInRange && Input.GetKeyDown(KeyCode.X))
+        if (playerInRange && Input.GetKeyDown(KeyCode.X) && Time.timeScale != 0)
         {
-            StartCoroutine(EnterBuilding());
+            if (videoPlayer == null) {
+                LoadNextScene();
+            } else {
+                // StartCoroutine(EnterBuilding());
+                videoPlayer.loopPointReached += EndReached;
+                videoPlayer.Play();
+                videoStarted = true;
+                interactionText.enabled = false;
+                Time.timeScale = 0f;
+            }
         }
+        else if (Time.timeScale == 0 && Input.GetKeyDown(KeyCode.X)) {
+            Time.timeScale = 1f;
+            SkipVideo();
+        }
+    }
+
+    void EndReached(VideoPlayer vp)
+    {
+        LoadNextScene();
+    }
+
+    void LoadNextScene()
+    {
+        SceneManager.LoadScene(nextSceneName);
+    }
+
+    void SkipVideo()
+    {
+        videoPlayer.Stop();
+        LoadNextScene();
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") && !videoStarted)
         {
             interactionText.enabled = true;
             playerInRange = true;
