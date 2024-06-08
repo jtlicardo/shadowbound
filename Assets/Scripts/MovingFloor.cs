@@ -13,10 +13,13 @@ public class MovingFloor : MonoBehaviour
     private bool movingUp = true;
     private float pauseTimer;
 
+    private BoxCollider boxCollider;
+
     void Start()
     {
         originalY = transform.position.y;
         targetY = originalY + height;
+        boxCollider = GetComponent<BoxCollider>();
     }
 
     void Update()
@@ -42,15 +45,33 @@ public class MovingFloor : MonoBehaviour
         }
         else
         {
-            if (transform.position.y > originalY)
+            if (transform.position.y > originalY && !IsPlayerBelow())
             {
                 transform.position = new Vector3(transform.position.x, transform.position.y - step, transform.position.z);
             }
             else
             {
-                pauseTimer = pauseDuration;
-                movingUp = true;
+                if (transform.position.y <= originalY)
+                {
+                    pauseTimer = pauseDuration;
+                    movingUp = true;
+                }
             }
         }
+    }
+
+    bool IsPlayerBelow()
+    {
+        Bounds bounds = boxCollider.bounds;
+        Vector3 origin = new Vector3(bounds.center.x, bounds.min.y, bounds.center.z);
+        Vector3 halfExtents = new Vector3(bounds.extents.x, 0.1f, bounds.extents.z);
+        RaycastHit hit;
+
+        bool isHit = Physics.BoxCast(origin, halfExtents, Vector3.down, out hit, Quaternion.identity, 0.1f);
+        if (isHit && hit.collider.CompareTag("Player"))
+        {
+            return true;
+        }
+        return false;
     }
 }
