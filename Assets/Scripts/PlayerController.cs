@@ -19,6 +19,8 @@ public class PlayerController : MonoBehaviour
     public bool IsCrouching { get; private set; } = false;
     public bool IsGrounded { get; set; } = false;
 
+    public AudioClip[] deathSounds;
+    private int currentDeathSoundIndex = 0; 
     public AudioClip moveSound;
     private AudioSource audioSource;
 
@@ -68,6 +70,7 @@ public class PlayerController : MonoBehaviour
     }
 
     private void die() {
+        PlayDeathSound();
         if (canDie) {
             isAlive = false;
             canDie = false;
@@ -117,8 +120,8 @@ public class PlayerController : MonoBehaviour
 
         float move = Input.GetAxis("Horizontal");
 
-        if (move != 0 && IsGrounded) PlaySound(moveSound);
-        else audioSource.Stop();
+        if (move != 0 && IsGrounded && isAlive) PlaySound(moveSound);
+        else if (isAlive) audioSource.Stop();
 
         if (droneCollisions.Length > 0 && move != 0)
         {
@@ -161,6 +164,8 @@ public class PlayerController : MonoBehaviour
 
     private void PlaySound(AudioClip clip)
     {
+        audioSource.volume = 0.2f; 
+        audioSource.pitch = 1.7f; 
         if (audioSource.isPlaying && audioSource.clip == clip)
         {
             return;
@@ -168,5 +173,21 @@ public class PlayerController : MonoBehaviour
 
         audioSource.clip = clip;
         audioSource.Play();
+    }
+
+    public void PlayDeathSound()
+    {
+        if (deathSounds.Length == 0)
+        {
+            Debug.LogWarning("No death sounds assigned!");
+            return;
+        }
+
+        audioSource.volume = 0.7f; 
+        audioSource.pitch = 1.0f; 
+        audioSource.clip = deathSounds[currentDeathSoundIndex];
+        audioSource.Play();
+
+        currentDeathSoundIndex = (currentDeathSoundIndex + 1) % deathSounds.Length;
     }
 }
