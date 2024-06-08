@@ -29,7 +29,7 @@ public class DoorInteraction : MonoBehaviour
                 Time.timeScale = 0f;
             }
         }
-        else if (Time.timeScale == 0 && Input.GetKeyDown(KeyCode.X)) {
+        else if (Time.timeScale == 0 && Input.anyKeyDown) {
             Time.timeScale = 1f;
             SkipVideo();
         }
@@ -47,7 +47,6 @@ public class DoorInteraction : MonoBehaviour
 
     void SkipVideo()
     {
-        videoPlayer.Stop();
         LoadNextScene();
     }
 
