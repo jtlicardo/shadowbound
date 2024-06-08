@@ -77,7 +77,6 @@ public class PlayerController : MonoBehaviour
     IEnumerator revive()
     {
         yield return new WaitForSecondsRealtime(1);
-        Debug.Log("test"); 
         canDie = true;
     }
 
