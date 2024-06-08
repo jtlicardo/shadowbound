@@ -5,7 +5,7 @@ using UnityEngine;
 public class LightScript : MonoBehaviour
 {
     public GameObject light;
-    public PressurePLate pressurePlate;
+    public PressurePlate pressurePlate;
     private bool isEnabled = true; 
     // Start is called before the first frame update
     void Start()
