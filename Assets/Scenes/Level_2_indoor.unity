@@ -7956,6 +7956,10 @@ MonoBehaviour:
   isAlive: 1
   runSpeed: 8
   jumpHeight: 380
+  deathSounds:
+  - {fileID: 8300000, guid: a10cbd1fdf2232a4db2aa8d48143e6fa, type: 3}
+  - {fileID: 8300000, guid: bff992adc43bff845ab6c0db01383c7e, type: 3}
+  - {fileID: 8300000, guid: 745da59ab11dbbb40aae916757c05482, type: 3}
   moveSound: {fileID: 8300000, guid: 121b593fbba863842a8f7bc0a282c49e, type: 3}
   boxLayer:
     serializedVersion: 2
