@@ -56,4 +56,15 @@ public class HorizontallyMovingPlatform : MonoBehaviour
             }
         }
     }
+
+    // function for TriggerChild to call (will ensure the player moves with the platform)
+    public void HandleEnter(Transform player)
+    {
+        player.SetParent(transform);
+    }
+
+    public void HandleExit(Transform player)
+    {
+        player.SetParent(null);
+    }
 }
