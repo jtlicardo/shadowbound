@@ -10496,8 +10496,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 941af31b0bee26e44a1dcf0e3fede4cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  checkpoint: {fileID: 0}
-  player: {fileID: 0}
+  checkpoint: {fileID: 1249631169}
+  player: {fileID: 2108716066}
   isEnabled: 1
   Box: {fileID: 0}
   boxLayer:
@@ -11965,7 +11965,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7961f9d807cefb4d9c2fc2bd1950f28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pressurePlate: {fileID: 0}
+  pressurePlate: {fileID: 1790487617}
 --- !u!65 &1384672683
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -18127,8 +18127,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55915109792557945a88701b15c80560, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioSource: {fileID: 0}
-  wasPlayingBeforePause: 0
 --- !u!1001 &1875471446
 PrefabInstance:
   m_ObjectHideFlags: 0
