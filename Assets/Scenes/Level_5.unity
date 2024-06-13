@@ -48557,6 +48557,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1626030323}
   - component: {fileID: 1626030322}
+  - component: {fileID: 1626030324}
   m_Layer: 8
   m_Name: Lift
   m_TagString: Untagged
@@ -48595,6 +48596,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 219
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1626030324
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1626030321}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &1633428090
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -57959,6 +57973,10 @@ MonoBehaviour:
   isAlive: 1
   runSpeed: 7
   jumpHeight: 380
+  deathSounds:
+  - {fileID: 8300000, guid: a10cbd1fdf2232a4db2aa8d48143e6fa, type: 3}
+  - {fileID: 8300000, guid: bff992adc43bff845ab6c0db01383c7e, type: 3}
+  - {fileID: 8300000, guid: 745da59ab11dbbb40aae916757c05482, type: 3}
   moveSound: {fileID: 8300000, guid: 121b593fbba863842a8f7bc0a282c49e, type: 3}
   boxLayer:
     serializedVersion: 2
