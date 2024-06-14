@@ -8,12 +8,14 @@ public class RestartGame : MonoBehaviour
 {
     public PlayerController Player;
     public GameObject DeathScreen;
+    public GameObject pauseMenu;
     public string restartSceneName;
 
     public void Restart()
     {
         Time.timeScale = 1f;
         DeathScreen.SetActive(false);
+        pauseMenu.SetActive(false);
         Player.respawn();
     }
     public void MainMenu()
@@ -34,5 +36,6 @@ public class RestartGame : MonoBehaviour
     void Start()
     {
         DeathScreen.SetActive(false);
+        pauseMenu.SetActive(false);
     }
 }
