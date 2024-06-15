@@ -13,7 +13,6 @@ public class MainMenu : MonoBehaviour
 
     public void ContinueGame()
     {
-        // Load the scene in the build index
         SceneManager.LoadScene(GameManager.Instance.currentSceneName);
     }
 
