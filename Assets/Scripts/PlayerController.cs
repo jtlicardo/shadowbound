@@ -43,7 +43,6 @@ public class PlayerController : MonoBehaviour
     public Transform groundCheck;
     public Transform bodyGroundCheck;
     public Transform StartingPoint;
-    private CapsuleCollider capsuleCollider;
 
     private float securityCameraDetectionTimer = 0f;
     private bool isDetectedByCamera = false;
@@ -53,7 +52,6 @@ public class PlayerController : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
         myRB = GetComponent<Rigidbody>();
         myAnim = GetComponent<Animator>();
-        capsuleCollider = GetComponent<CapsuleCollider>();
         facingRight = true;
         respawn();
         //transform.Translate(StartingPoint ? StartingPoint.localPosition : Vector3.zero, Space.Self);
