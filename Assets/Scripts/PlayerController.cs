@@ -46,11 +46,14 @@ public class PlayerController : MonoBehaviour
     public Transform bodyGroundCheck;
     public Transform StartingPoint;
 
+    private CapsuleCollider capsuleCollider;
+
     private float securityCameraDetectionTimer = 0f;
     private bool isDetectedByCamera = false;
 
     void Start()
     {
+        capsuleCollider = GetComponent<CapsuleCollider>();
         audioSource = GetComponent<AudioSource>();
         myRB = GetComponent<Rigidbody>();
         myAnim = GetComponent<Animator>();
@@ -106,7 +109,9 @@ public class PlayerController : MonoBehaviour
         // Check for collisions with security cameras, drones, enemies, lasers, and lights
         droneCollisions = Physics.OverlapSphere(myRB.position, 1.2f, droneLayer);
         enemyCollisions = Physics.OverlapSphere(myRB.position, groundCheckRadius, enemyLayer);
-        laserCollisions = Physics.OverlapSphere(myRB.position, groundCheckRadius, laserLayer);
+
+        laserCollisions = Physics.OverlapBox(new Vector3(myRB.position.x, myRB.position.y * 1.05f, myRB.position.z), new Vector3(1, 1, 1), myRB.rotation, laserLayer);
+
         lightCollisions = Physics.OverlapSphere(myRB.position, groundCheckRadius, lightLayer);
         darknessCollisions = Physics.OverlapSphere(myRB.position, groundCheckRadius, darknessLayer);
         securityCameraCollisions = Physics.OverlapSphere(myRB.position, 1.2f, securityCameraLayer);

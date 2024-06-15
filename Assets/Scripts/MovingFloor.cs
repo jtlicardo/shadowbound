@@ -10,10 +10,12 @@ public class MovingFloor : MonoBehaviour
 
     private float originalY;
     private float targetY;
-    private bool movingUp = true;
+    private bool moving = true;
     private float pauseTimer;
 
     private BoxCollider boxCollider;
+
+    public PressurePlate pressurePlate;
 
     void Start()
     {
@@ -30,32 +32,42 @@ public class MovingFloor : MonoBehaviour
             return;
         }
 
-        float step = speed * Time.deltaTime;
-        if (movingUp)
+        if (pressurePlate && pressurePlate.isEnabled)
         {
-            if (transform.position.y < targetY)
+            return;
+        }
+
+        float step = speed * Time.deltaTime;
+        if (moving)
+        {
+            if (transform.position.y < targetY && height > 0)
+            {
+                transform.position = new Vector3(transform.position.x, transform.position.y + step, transform.position.z);
+            }
+            else if (transform.position.y > targetY && height < 0 && !IsPlayerBelow())
+            {
+                transform.position = new Vector3(transform.position.x, transform.position.y - step, transform.position.z);
+            }
+            else
+            {
+                pauseTimer = pauseDuration;
+                moving = false;
+            }
+        }
+        else
+        {
+            if (transform.position.y > originalY && height > 0 && !IsPlayerBelow())
+            {
+                transform.position = new Vector3(transform.position.x, transform.position.y - step, transform.position.z);
+            }
+            else if (transform.position.y < originalY && height < 0)
             {
                 transform.position = new Vector3(transform.position.x, transform.position.y + step, transform.position.z);
             }
             else
             {
                 pauseTimer = pauseDuration;
-                movingUp = false;
-            }
-        }
-        else
-        {
-            if (transform.position.y > originalY && !IsPlayerBelow())
-            {
-                transform.position = new Vector3(transform.position.x, transform.position.y - step, transform.position.z);
-            }
-            else
-            {
-                if (transform.position.y <= originalY)
-                {
-                    pauseTimer = pauseDuration;
-                    movingUp = true;
-                }
+                moving = true;
             }
         }
     }
