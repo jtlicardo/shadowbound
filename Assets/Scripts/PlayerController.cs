@@ -31,6 +31,7 @@ public class PlayerController : MonoBehaviour
     Collider[] laserCollisions;
     Collider[] droneCollisions;
     Collider[] lightCollisions;
+    Collider[] darknessCollisions;
     Collider[] securityCameraCollisions;
     private readonly float groundCheckRadius = 0.2f;
     public LayerMask boxLayer;
@@ -39,6 +40,7 @@ public class PlayerController : MonoBehaviour
     public LayerMask groundLayer;
     public LayerMask laserLayer;
     public LayerMask lightLayer;
+    public LayerMask darknessLayer;
     public LayerMask securityCameraLayer;
     public Transform groundCheck;
     public Transform bodyGroundCheck;
@@ -106,6 +108,7 @@ public class PlayerController : MonoBehaviour
         enemyCollisions = Physics.OverlapSphere(myRB.position, groundCheckRadius, enemyLayer);
         laserCollisions = Physics.OverlapSphere(myRB.position, groundCheckRadius, laserLayer);
         lightCollisions = Physics.OverlapSphere(myRB.position, groundCheckRadius, lightLayer);
+        darknessCollisions = Physics.OverlapSphere(myRB.position, groundCheckRadius, darknessLayer);
         securityCameraCollisions = Physics.OverlapSphere(myRB.position, 1.2f, securityCameraLayer);
 
         if (enemyCollisions.Length > 0 && lightCollisions.Length > 0 ||
@@ -127,8 +130,10 @@ public class PlayerController : MonoBehaviour
         }
 
         // The player is detected by the security camera if standing in the camera's field of view for more than 1 second
-        if (securityCameraCollisions.Length > 0)
+        // If the player has an overlap with the darkness layer, the camera should not detect the player
+        if (securityCameraCollisions.Length > 0 && darknessCollisions.Length == 0)
         {
+            Debug.Log("Detected by camera");
             if (!isDetectedByCamera)
             {
                 isDetectedByCamera = true;
