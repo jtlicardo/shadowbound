@@ -43,7 +43,6 @@ public class PlayerController : MonoBehaviour
     public Transform groundCheck;
     public Transform bodyGroundCheck;
     public Transform StartingPoint;
-    private CapsuleCollider capsuleCollider;
 
     private float securityCameraDetectionTimer = 0f;
     private bool isDetectedByCamera = false;
@@ -53,7 +52,6 @@ public class PlayerController : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
         myRB = GetComponent<Rigidbody>();
         myAnim = GetComponent<Animator>();
-        capsuleCollider = GetComponent<CapsuleCollider>();
         facingRight = true;
         respawn();
         //transform.Translate(StartingPoint ? StartingPoint.localPosition : Vector3.zero, Space.Self);
@@ -129,7 +127,7 @@ public class PlayerController : MonoBehaviour
         }
 
         // The player is detected by the security camera if standing in the camera's field of view for more than 1 second
-        if (lightCollisions.Length > 0 && securityCameraCollisions.Length > 0)
+        if (securityCameraCollisions.Length > 0)
         {
             if (!isDetectedByCamera)
             {

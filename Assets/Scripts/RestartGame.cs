@@ -17,6 +17,11 @@ public class RestartGame : MonoBehaviour
         DeathScreen.SetActive(false);
         pauseMenu.SetActive(false);
         Player.respawn();
+
+        if (AudioListener.volume == 0)
+        {
+            AudioListener.volume = 1;
+        }
     }
     public void MainMenu()
     {
