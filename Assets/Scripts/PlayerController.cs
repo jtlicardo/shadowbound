@@ -127,7 +127,7 @@ public class PlayerController : MonoBehaviour
         }
 
         // The player is detected by the security camera if standing in the camera's field of view for more than 1 second
-        if (lightCollisions.Length > 0 && securityCameraCollisions.Length > 0)
+        if (securityCameraCollisions.Length > 0)
         {
             if (!isDetectedByCamera)
             {
