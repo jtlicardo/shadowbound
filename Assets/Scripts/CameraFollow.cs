@@ -14,7 +14,14 @@ public class CameraFollow : MonoBehaviour
     void Start()
     {
         player = target.GetComponent<PlayerController>();
-        offset = transform.position - target.position;
+
+        // Compute initial camera position
+        Vector3 initialPosition = new Vector3(target.position.x, target.position.y + 2.5f, target.position.z - 10f);
+
+        // Set the camera's position to the computed initial position
+        transform.position = initialPosition;
+
+        offset = initialPosition - target.position;
     }
 
     void FixedUpdate()
