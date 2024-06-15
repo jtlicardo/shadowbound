@@ -42,19 +42,21 @@ public class GradientTriangle : MonoBehaviour
 
     void Update()
     {
-        // Check for overlaps with the darkness layer
-
-        // Adjust the overlap box size slightly smaller than the actual collider
-        Vector3 boxSize = boxCollider.size * 0.9f;
-        Collider[] hitColliders = Physics.OverlapBox(boxCollider.bounds.center, boxSize / 2, boxCollider.transform.rotation, LayerMask.GetMask("Darkness"));
-
-        if (hitColliders.Length > 0)
+        // This is only needed for the security camera for now
+        if (boxCollider != null)
         {
-            meshRenderer.enabled = false;
-        }
-        else if (hitColliders.Length == 0)
-        {
-            meshRenderer.enabled = true;
+            // Check for overlaps with the darkness layer
+            Vector3 boxSize = boxCollider.size * 0.9f;
+            Collider[] hitColliders = Physics.OverlapBox(boxCollider.bounds.center, boxSize / 2, boxCollider.transform.rotation, LayerMask.GetMask("Darkness"));
+
+            if (hitColliders.Length > 0)
+            {
+                meshRenderer.enabled = false; // Hide the triangle
+            }
+            else if (hitColliders.Length == 0)
+            {
+                meshRenderer.enabled = true; // Show the triangle
+            }
         }
     }
 }
