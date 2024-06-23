@@ -9,7 +9,6 @@ public class PressurePlate : MonoBehaviour
     private AudioSource audioSource;
     public PlayerController player;
     public bool isEnabled = true;
-    public GameObject Box;
     Collider[] boxCollisions;
     float boxCheckRadius = 0.5f;
     public LayerMask boxLayer;
