@@ -10,7 +10,7 @@ public class Checkpoint : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            GameManager.Instance.SetCheckpoint(this.transform, playerShouldFaceRight);
+            GameManager.Instance.SetCheckpoint(this.transform.position, this.transform.rotation, playerShouldFaceRight);
         }
     }
 }

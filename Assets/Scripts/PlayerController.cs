@@ -55,12 +55,14 @@ public class PlayerController : MonoBehaviour
         myAnim = GetComponent<Animator>();
         facingRight = true;
 
-        isAlive = true;
-        StartCoroutine(revive());
+        Debug.Log("Player Start: Setting initial checkpoint at player at " + transform.position);
+        GameManager.Instance.SetCheckpoint(transform.position, transform.rotation, facingRight);
+
+        respawn();
     }
 
-    public void respawn() {
-        GameManager.Instance.RespawnAtCheckpoint();
+    public void respawn()
+    {
         isAlive = true;
         StartCoroutine(revive());
     }
