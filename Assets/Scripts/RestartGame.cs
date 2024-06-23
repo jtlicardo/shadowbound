@@ -31,7 +31,6 @@ public class RestartGame : MonoBehaviour
     {
         if (Player != null && !Player.isAlive)
         {
-            Debug.Log("RestartGame Update");
             Time.timeScale = 0f;
             DeathScreen.SetActive(true);
             Cursor.lockState = CursorLockMode.None;
