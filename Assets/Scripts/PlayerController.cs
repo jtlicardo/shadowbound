@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -111,14 +112,23 @@ public class PlayerController : MonoBehaviour
         droneCollisions = Physics.OverlapSphere(myRB.position, 1.2f, droneLayer);
         enemyCollisions = Physics.OverlapSphere(myRB.position, groundCheckRadius, enemyLayer);
 
-        laserCollisions = Physics.OverlapBox(new Vector3(myRB.position.x, myRB.position.y * 1.05f, myRB.position.z), new Vector3(1, 1, 1), myRB.rotation, laserLayer);
+        var col = GetComponent<CapsuleCollider>();
+        var direction = new Vector3 { [col.direction] = 1 };
+        var offset = col.height / 2 - col.radius;
+        var localPoint0 = col.center - direction * offset;
+        var localPoint1 = col.center + direction * offset;
+
+        var point0 = transform.TransformPoint(localPoint0);
+        var point1 = transform.TransformPoint(localPoint1);
+
+        var r = transform.TransformVector(col.radius, col.radius, col.radius);
+        var radius = Enumerable.Range(0, 3).Select(xyz => xyz == col.direction ? 0 : r[xyz]).Select(Mathf.Abs).Max();
 
         lightCollisions = Physics.OverlapSphere(myRB.position, groundCheckRadius, lightLayer);
         darknessCollisions = Physics.OverlapSphere(myRB.position, groundCheckRadius, darknessLayer);
         securityCameraCollisions = Physics.OverlapSphere(myRB.position, 1.2f, securityCameraLayer);
 
-        if (enemyCollisions.Length > 0 && lightCollisions.Length > 0 ||
-            laserCollisions.Length > 0)
+        if (enemyCollisions.Length > 0 && lightCollisions.Length > 0)
         {
             die();
         }
@@ -195,5 +205,13 @@ public class PlayerController : MonoBehaviour
         audioSource.Play();
 
         currentDeathSoundIndex = (currentDeathSoundIndex + 1) % deathSounds.Length;
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Laser"))
+        {
+            die();
+        }
     }
 }
