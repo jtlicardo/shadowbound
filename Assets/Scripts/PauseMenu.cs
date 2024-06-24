@@ -44,6 +44,7 @@ public class PauseMenu : MonoBehaviour
         AudioListener.volume = 1;
     }
 
+    // TODO: remove
     public void GoToMainMenu()
     {
         Time.timeScale = 1f;

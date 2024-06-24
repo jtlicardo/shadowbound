@@ -16,6 +16,9 @@ public class RestartGame : MonoBehaviour
         Time.timeScale = 1f;
         DeathScreen.SetActive(false);
         pauseMenu.SetActive(false);
+
+        Debug.Log("RestartGame Restart: Respawning at checkpoint.");
+        GameManager.Instance.RespawnAtCheckpoint();
         Player.respawn();
 
         if (AudioListener.volume == 0)
@@ -31,7 +34,6 @@ public class RestartGame : MonoBehaviour
     {
         if (Player != null && !Player.isAlive)
         {
-            Debug.Log("RestartGame Update");
             Time.timeScale = 0f;
             DeathScreen.SetActive(true);
             Cursor.lockState = CursorLockMode.None;

@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody myRB;
     private Animator myAnim;
 
-    private bool facingRight;
+    public bool facingRight;
     private bool canDie = true;
 
     public bool IsCrouching { get; private set; } = false;
@@ -44,32 +44,25 @@ public class PlayerController : MonoBehaviour
     public LayerMask securityCameraLayer;
     public Transform groundCheck;
     public Transform bodyGroundCheck;
-    public Transform StartingPoint;
-
-    private CapsuleCollider capsuleCollider;
 
     private float securityCameraDetectionTimer = 0f;
     private bool isDetectedByCamera = false;
 
     void Start()
     {
-        capsuleCollider = GetComponent<CapsuleCollider>();
         audioSource = GetComponent<AudioSource>();
         myRB = GetComponent<Rigidbody>();
         myAnim = GetComponent<Animator>();
         facingRight = true;
-        respawn();
-        //transform.Translate(StartingPoint ? StartingPoint.localPosition : Vector3.zero, Space.Self);
-    }
 
-    public void setCheckpoint(Vector3 position)
-    {
-        StartingPoint.position = position;
+        Debug.Log("Player Start: Setting initial checkpoint at player at " + transform.position);
+        GameManager.Instance.SetCheckpoint(transform.position, transform.rotation, facingRight);
+
+        respawn();
     }
 
     public void respawn()
     {
-        transform.position = StartingPoint.position;
         isAlive = true;
         StartCoroutine(revive());
     }
@@ -88,6 +81,12 @@ public class PlayerController : MonoBehaviour
     {
         yield return new WaitForSecondsRealtime(1);
         canDie = true;
+    }
+
+    public void Flip()
+    {
+        facingRight = !facingRight;
+        transform.Rotate(Vector3.up, 180.0f, Space.World);
     }
 
     void Update()
@@ -160,17 +159,14 @@ public class PlayerController : MonoBehaviour
         }
 
         myAnim.SetFloat("speed", Mathf.Abs(move));
-        if (bodyGroundCollisions.Length < 1 || groundCollisions.Length > 0) myRB.velocity = new Vector3(move * runSpeed, myRB.velocity.y, 0);
+        if (bodyGroundCollisions.Length < 1 || groundCollisions.Length > 0)
+        {
+            myRB.velocity = new Vector3(move * runSpeed, myRB.velocity.y, 0);
+        }
 
         if (move > 0 && !facingRight || move < 0 && facingRight)
         {
             Flip();
-        }
-
-        void Flip()
-        {
-            facingRight = !facingRight;
-            transform.Rotate(Vector3.up, 180.0f, Space.World);
         }
     }
 

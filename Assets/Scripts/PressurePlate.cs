@@ -7,10 +7,8 @@ using UnityEngine.SceneManagement;
 public class PressurePlate : MonoBehaviour
 {
     private AudioSource audioSource;
-    public Transform checkpoint; // Optional checkpoint
     public PlayerController player;
     public bool isEnabled = true;
-    public GameObject Box;
     Collider[] boxCollisions;
     float boxCheckRadius = 0.5f;
     public LayerMask boxLayer;
@@ -22,13 +20,6 @@ public class PressurePlate : MonoBehaviour
 
             if (boxCollisions.Length > 0) {
                 isEnabled = false;
-
-                // Only set the checkpoint if it exists
-                if (checkpoint != null)
-                {
-                    player.setCheckpoint(checkpoint.position);
-                }
-
                 PlaySound();
             } 
             else isEnabled = true;
