@@ -114,6 +114,7 @@ public class PlayerController : MonoBehaviour
         droneCollisions = Physics.OverlapSphere(myRB.position, 1.2f, droneLayer);
         enemyCollisions = Physics.OverlapSphere(myRB.position, groundCheckRadius, enemyLayer);
 
+        laserCollisions = Physics.OverlapSphere(myRB.position, groundCheckRadius, laserLayer);
         var col = GetComponent<CapsuleCollider>();
         var direction = new Vector3 { [col.direction] = 1 };
         var offset = col.height / 2 - col.radius;
@@ -141,6 +142,11 @@ public class PlayerController : MonoBehaviour
 
         if (move != 0 && IsGrounded && isAlive) PlaySound(moveSound);
         else if (isAlive) audioSource.Stop();
+
+        if (laserCollisions.Length > 0)
+        {
+            die();
+        }
 
         if (droneCollisions.Length > 0 && move != 0)
         {
