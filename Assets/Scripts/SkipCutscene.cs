@@ -51,5 +51,9 @@ public class SkipCutscene : MonoBehaviour
             // Load the next scene
             SceneManager.LoadScene(currentSceneIndex + 1);
         }
+        else
+        {
+            SceneManager.LoadScene(0);
+        }
     }
 }
