@@ -41,4 +41,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level_5.unity
     guid: ee490792fc97e1c4f92afe8c052dcf38
+  - enabled: 1
+    path: Assets/Scenes/Cutscene_Scenes/Rolling_credits_scene.unity
+    guid: 59e8103c7324356419d27da1eb75c168
   m_configObjects: {}
