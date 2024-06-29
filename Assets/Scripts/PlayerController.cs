@@ -157,7 +157,6 @@ public class PlayerController : MonoBehaviour
         // If the player has an overlap with the darkness layer, the camera should not detect the player
         if (securityCameraCollisions.Length > 0 && darknessCollisions.Length == 0)
         {
-            Debug.Log("Detected by camera");
             if (!isDetectedByCamera)
             {
                 isDetectedByCamera = true;
