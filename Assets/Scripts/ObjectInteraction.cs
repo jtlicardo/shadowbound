@@ -6,6 +6,7 @@ public class ObjectInteraction : MonoBehaviour
     public MovingFloor movingFloor; // Reference to the MovingFloor script (optional)
     private bool hasTriggered = false;
     public DialogueTrigger dialogueTrigger; // Reference to the DialogueTrigger script (optional)
+    public BoxCollider boxCollider; // Reference to a BoxCollider that needs to be activated (optional)
 
     private void OnTriggerEnter(Collider other)
     {
@@ -32,6 +33,12 @@ public class ObjectInteraction : MonoBehaviour
             if (dialogueTrigger != null)
             {
                 dialogueTrigger.TriggerDialogue();
+            }
+
+            // Activate the box collider
+            if (boxCollider != null)
+            {
+                boxCollider.enabled = true;
             }
         }
     }

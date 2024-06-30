@@ -1509,6 +1509,7 @@ Transform:
   - {fileID: 1864668786}
   - {fileID: 640701494}
   - {fileID: 706154332}
+  - {fileID: 719320552}
   m_Father: {fileID: 0}
   m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -8748,12 +8749,12 @@ PrefabInstance:
     - target: {fileID: 4592253504152099484, guid: a07dffe36c92aec44a95c900438af993,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4592253504152099484, guid: a07dffe36c92aec44a95c900438af993,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.7514997
+      value: 2.75
       objectReference: {fileID: 0}
     - target: {fileID: 4592253504152099484, guid: a07dffe36c92aec44a95c900438af993,
         type: 3}
@@ -8763,7 +8764,7 @@ PrefabInstance:
     - target: {fileID: 4592253504152099484, guid: a07dffe36c92aec44a95c900438af993,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.97665024
+      value: 1.59
       objectReference: {fileID: 0}
     - target: {fileID: 4592253504152099484, guid: a07dffe36c92aec44a95c900438af993,
         type: 3}
@@ -12171,6 +12172,113 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 718069877}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &719320551
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 719320552}
+  - component: {fileID: 719320556}
+  - component: {fileID: 719320555}
+  - component: {fileID: 719320554}
+  - component: {fileID: 719320553}
+  m_Layer: 0
+  m_Name: Checkpoint (4)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &719320552
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 719320551}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 55.16, y: 47.76, z: -1.2}
+  m_LocalScale: {x: 4, y: 4, z: 4}
+  m_Children: []
+  m_Father: {fileID: 74831059}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+--- !u!114 &719320553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 719320551}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6746b057a6f014a4a88b5c592cd2e3d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerShouldFaceRight: 0
+--- !u!65 &719320554
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 719320551}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &719320555
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 719320551}
+  m_Enabled: 0
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!33 &719320556
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 719320551}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1001 &722729094
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12461,7 +12569,7 @@ PrefabInstance:
     - target: {fileID: 6534420261576204862, guid: c492efe3e037d4447923edc38633bd5b,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6534420261576204862, guid: c492efe3e037d4447923edc38633bd5b,
         type: 3}
@@ -12476,7 +12584,7 @@ PrefabInstance:
     - target: {fileID: 6534420261576204862, guid: c492efe3e037d4447923edc38633bd5b,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.9966488
+      value: 1.46
       objectReference: {fileID: 0}
     - target: {fileID: 6534420261576204862, guid: c492efe3e037d4447923edc38633bd5b,
         type: 3}
@@ -19811,7 +19919,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7961f9d807cefb4d9c2fc2bd1950f28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pressurePlate: {fileID: 222601583}
+  pressurePlate: {fileID: 0}
 --- !u!65 &1060987366
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -22985,12 +23093,12 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 8cf152a0a06b3dc47a7c6d40918d95a9,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -10.9
+      value: -10.7
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8cf152a0a06b3dc47a7c6d40918d95a9,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.8
+      value: 1.3
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8cf152a0a06b3dc47a7c6d40918d95a9,
         type: 3}
@@ -24062,7 +24170,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7961f9d807cefb4d9c2fc2bd1950f28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pressurePlate: {fileID: 222601583}
+  pressurePlate: {fileID: 0}
 --- !u!65 &1205181360
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -24968,7 +25076,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueCanvas: {fileID: 1955642923}
   dialogueText: {fileID: 149697052}
-  textToDisplay: I need to find that key downstairs to activate the platform.
+  textToDisplay: Better find a vantage point to eavesdrop on them.
   triggerOnce: 1
 --- !u!33 &1270797831
 MeshFilter:
@@ -27334,7 +27442,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1375770286
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27357,7 +27465,7 @@ BoxCollider:
   m_GameObject: {fileID: 1375770285}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -29783,6 +29891,7 @@ MonoBehaviour:
   panel: {fileID: 258045475}
   movingFloor: {fileID: 0}
   dialogueTrigger: {fileID: 713532476}
+  boxCollider: {fileID: 1375770287}
 --- !u!1 &1522821029
 GameObject:
   m_ObjectHideFlags: 0
@@ -34029,7 +34138,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7961f9d807cefb4d9c2fc2bd1950f28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pressurePlate: {fileID: 222601583}
+  pressurePlate: {fileID: 0}
 --- !u!65 &1737800038
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -34790,6 +34899,7 @@ MonoBehaviour:
   panel: {fileID: 597251196}
   movingFloor: {fileID: 1169467470}
   dialogueTrigger: {fileID: 0}
+  boxCollider: {fileID: 0}
 --- !u!33 &1780452395
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -38607,7 +38717,7 @@ PrefabInstance:
     - target: {fileID: 4592253504152099484, guid: a07dffe36c92aec44a95c900438af993,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4592253504152099484, guid: a07dffe36c92aec44a95c900438af993,
         type: 3}
@@ -38622,7 +38732,7 @@ PrefabInstance:
     - target: {fileID: 4592253504152099484, guid: a07dffe36c92aec44a95c900438af993,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.98
+      value: 1.47
       objectReference: {fileID: 0}
     - target: {fileID: 4592253504152099484, guid: a07dffe36c92aec44a95c900438af993,
         type: 3}
