@@ -8,6 +8,7 @@ public class SmallGate : MonoBehaviour
     private Vector3 initialPosition;
     private Vector3 targetPosition;
     private bool isRising = false;
+    public DisappearingEnemy[] disappearingEnemies; // Array of DisappearingEnemy scripts
 
     void Start()
     {
@@ -38,5 +39,25 @@ public class SmallGate : MonoBehaviour
         }
 
         isRising = false;
+
+        // Disable the BoxCollider on the parent object
+        Transform parentTransform = transform.parent;
+        if (parentTransform != null)
+        {
+            BoxCollider parentCollider = parentTransform.GetComponent<BoxCollider>();
+            if (parentCollider != null)
+            {
+                parentCollider.enabled = false;
+            }
+        }
+
+        // Trigger the disappearing enemies
+        foreach (DisappearingEnemy enemy in disappearingEnemies)
+        {
+            if (enemy != null)
+            {
+                enemy.StartWalkAndDisappear();
+            }
+        }
     }
 }

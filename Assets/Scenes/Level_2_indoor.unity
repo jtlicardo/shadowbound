@@ -21211,17 +21211,17 @@ PrefabInstance:
     - target: {fileID: 7316150726056658403, guid: 156d19f5e1b4b53469340ce62b82f203,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 34.65
+      value: 39.74
       objectReference: {fileID: 0}
     - target: {fileID: 7316150726056658403, guid: 156d19f5e1b4b53469340ce62b82f203,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 19.68
+      value: 19.467
       objectReference: {fileID: 0}
     - target: {fileID: 7316150726056658403, guid: 156d19f5e1b4b53469340ce62b82f203,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 8.54
+      value: 8.62
       objectReference: {fileID: 0}
     - target: {fileID: 7316150726056658403, guid: 156d19f5e1b4b53469340ce62b82f203,
         type: 3}
@@ -21296,7 +21296,7 @@ PrefabInstance:
     - target: {fileID: 7981470346280869721, guid: 156d19f5e1b4b53469340ce62b82f203,
         type: 3}
       propertyPath: m_Name
-      value: Enemy (3)
+      value: DisappearingEnemy2
       objectReference: {fileID: 0}
     - target: {fileID: 7981470346280869721, guid: 156d19f5e1b4b53469340ce62b82f203,
         type: 3}
@@ -21521,6 +21521,21 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 124
   m_CollisionDetection: 0
+--- !u!114 &1156485667
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1156485659}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5088bc9ad20e9394d966458fd11bb9bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  walkDirection: {x: -1, y: 0, z: 0}
+  walkDistance: 30
+  walkSpeed: 2
 --- !u!1 &1161738053
 GameObject:
   m_ObjectHideFlags: 0
@@ -35143,8 +35158,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fa15e4162ef260428376978ac3e259b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  riseHeight: 5
+  riseHeight: 4
   riseSpeed: 1
+  disappearingEnemies:
+  - {fileID: 2112990370}
+  - {fileID: 1156485667}
 --- !u!1 &1864668785
 GameObject:
   m_ObjectHideFlags: 0
@@ -40281,17 +40299,17 @@ PrefabInstance:
     - target: {fileID: 7316150726056658403, guid: 156d19f5e1b4b53469340ce62b82f203,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 31.06
+      value: 37.01
       objectReference: {fileID: 0}
     - target: {fileID: 7316150726056658403, guid: 156d19f5e1b4b53469340ce62b82f203,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 19.72
+      value: 19.488
       objectReference: {fileID: 0}
     - target: {fileID: 7316150726056658403, guid: 156d19f5e1b4b53469340ce62b82f203,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 8.54
+      value: 8.64
       objectReference: {fileID: 0}
     - target: {fileID: 7316150726056658403, guid: 156d19f5e1b4b53469340ce62b82f203,
         type: 3}
@@ -40366,7 +40384,7 @@ PrefabInstance:
     - target: {fileID: 7981470346280869721, guid: 156d19f5e1b4b53469340ce62b82f203,
         type: 3}
       propertyPath: m_Name
-      value: Enemy (2)
+      value: DisappearingEnemy
       objectReference: {fileID: 0}
     - target: {fileID: 7981470346280869721, guid: 156d19f5e1b4b53469340ce62b82f203,
         type: 3}
@@ -40591,6 +40609,21 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 124
   m_CollisionDetection: 0
+--- !u!114 &2112990370
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2112990362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5088bc9ad20e9394d966458fd11bb9bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  walkDirection: {x: -1, y: 0, z: 0}
+  walkDistance: 30
+  walkSpeed: 2
 --- !u!1001 &2117242154
 PrefabInstance:
   m_ObjectHideFlags: 0
