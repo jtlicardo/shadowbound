@@ -43,11 +43,4 @@ public class PauseMenu : MonoBehaviour
         isPaused = false;
         AudioListener.volume = 1;
     }
-
-    // TODO: remove
-    public void GoToMainMenu()
-    {
-        Time.timeScale = 1f;
-        SceneManager.LoadScene("Menu");
-    }
 }
