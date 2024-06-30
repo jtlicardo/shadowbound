@@ -37,7 +37,6 @@ public class DisappearingEnemy : MonoBehaviour
         while (distanceCovered <= walkDistance)
         {
             distanceCovered = (Time.time - startTime) * walkSpeed;
-            Debug.Log("Distance covered: " + distanceCovered);
             float fractionOfJourney = distanceCovered / journeyLength;
             transform.position = Vector3.Lerp(startPosition, endPosition, fractionOfJourney);
             yield return null;
