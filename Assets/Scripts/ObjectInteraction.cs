@@ -3,6 +3,7 @@
 public class ObjectInteraction : MonoBehaviour
 {
     public GameObject panel;
+    public MovingFloor movingFloor; // Reference to the MovingFloor script
     private bool hasTriggered = false;
 
     private void OnTriggerEnter(Collider other)
@@ -19,6 +20,12 @@ public class ObjectInteraction : MonoBehaviour
         {
             panel.SetActive(false);
             hasTriggered = true;
+
+            // Activate the moving floor
+            if (movingFloor != null)
+            {
+                movingFloor.Activate();
+            }
         }
     }
 }

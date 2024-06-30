@@ -9626,6 +9626,7 @@ MonoBehaviour:
   speed: 2
   pauseDuration: 2
   pressurePlate: {fileID: 0}
+  isActivated: 1
 --- !u!1001 &596798487
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21729,6 +21730,7 @@ MonoBehaviour:
   speed: 2
   pauseDuration: 2
   pressurePlate: {fileID: 0}
+  isActivated: 0
 --- !u!4 &1173176526 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6954531691785998512, guid: cf8443763fc34314490f8a3e2f94dd37,
@@ -33141,6 +33143,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   panel: {fileID: 597251196}
+  movingFloor: {fileID: 1169467470}
 --- !u!33 &1780452395
 MeshFilter:
   m_ObjectHideFlags: 0
