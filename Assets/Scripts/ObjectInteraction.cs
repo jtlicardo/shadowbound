@@ -5,6 +5,7 @@ public class ObjectInteraction : MonoBehaviour
     public GameObject panel;
     public MovingFloor movingFloor; // Reference to the MovingFloor script (optional)
     private bool hasTriggered = false;
+    public DialogueTrigger dialogueTrigger; // Reference to the DialogueTrigger script (optional)
 
     private void OnTriggerEnter(Collider other)
     {
@@ -25,6 +26,12 @@ public class ObjectInteraction : MonoBehaviour
             if (movingFloor != null)
             {
                 movingFloor.Activate();
+            }
+
+            // Trigger the dialogue
+            if (dialogueTrigger != null)
+            {
+                dialogueTrigger.TriggerDialogue();
             }
         }
     }
