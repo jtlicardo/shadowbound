@@ -3,7 +3,7 @@
 public class ObjectInteraction : MonoBehaviour
 {
     public GameObject panel;
-    public MovingFloor movingFloor; // Reference to the MovingFloor script
+    public MovingFloor movingFloor; // Reference to the MovingFloor script (optional)
     private bool hasTriggered = false;
 
     private void OnTriggerEnter(Collider other)
