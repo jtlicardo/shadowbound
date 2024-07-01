@@ -14,8 +14,9 @@ public class MovingFloor : MonoBehaviour
     private float pauseTimer;
 
     private BoxCollider boxCollider;
-
     public PressurePlate pressurePlate;
+
+    public bool isActivated = true;
 
     void Start()
     {
@@ -26,6 +27,8 @@ public class MovingFloor : MonoBehaviour
 
     void Update()
     {
+        if (!isActivated) return;
+
         if (pauseTimer > 0)
         {
             pauseTimer -= Time.deltaTime;
@@ -85,5 +88,10 @@ public class MovingFloor : MonoBehaviour
             return true;
         }
         return false;
+    }
+
+    public void Activate()
+    {
+        isActivated = true;
     }
 }

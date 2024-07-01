@@ -13,6 +13,11 @@ public class CameraFollow : MonoBehaviour
 
     void Start()
     {
+        CalculatePosition();
+    }
+
+    public void CalculatePosition()
+    {
         player = target.GetComponent<PlayerController>();
 
         // Compute initial camera position

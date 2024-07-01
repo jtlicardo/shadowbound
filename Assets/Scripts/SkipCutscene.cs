@@ -41,8 +41,19 @@ public class SkipCutscene : MonoBehaviour
 
     void LoadNextScene()
     {
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        int totalScenes = SceneManager.sceneCountInBuildSettings;
+
         // Load the next scene; ensure you have added scenes in the Build settings
         // File -> Build Settings -> Add Open Scenes
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        if (currentSceneIndex < totalScenes - 1)
+        {
+            // Load the next scene
+            SceneManager.LoadScene(currentSceneIndex + 1);
+        }
+        else
+        {
+            SceneManager.LoadScene(0);
+        }
     }
 }

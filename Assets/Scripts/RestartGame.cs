@@ -21,11 +21,35 @@ public class RestartGame : MonoBehaviour
         GameManager.Instance.RespawnAtCheckpoint();
         Player.respawn();
 
+        ResetAudio();
+    }
+
+    public void RestartFullScene()
+    {
+        StartCoroutine(RestartFullSceneCoroutine());
+    }
+
+    void ResetAudio()
+    {
         if (AudioListener.volume == 0)
         {
             AudioListener.volume = 1;
         }
     }
+
+    private IEnumerator RestartFullSceneCoroutine()
+    {
+        Time.timeScale = 1f;
+        DeathScreen.SetActive(false);
+        pauseMenu.SetActive(false);
+        Debug.Log("RestartGame RestartFullScene: Reloading entire scene.");
+        ResetAudio();
+
+        yield return null; // Wait for end of frame to ensure all changes are applied
+
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
     public void MainMenu()
     {
         SceneManager.LoadScene(1);
