@@ -9,6 +9,7 @@ public class DialogueTrigger : MonoBehaviour
     public TextMeshProUGUI dialogueText;  // Reference to the Text component on the canvas
     public string textToDisplay = "Text to display";
     public bool triggerOnce = true;
+    public float triggerDelay = 0f;  // Optional delay before the dialogue is triggered
 
     private AudioSource audioSource;
     private bool hasTriggered = false;
@@ -42,6 +43,9 @@ public class DialogueTrigger : MonoBehaviour
 
     private IEnumerator PlayDialogueCoroutine()
     {
+        // Wait for the delay (if any)
+        yield return new WaitForSeconds(triggerDelay);
+
         // Display the text
         dialogueText.text = textToDisplay;
 

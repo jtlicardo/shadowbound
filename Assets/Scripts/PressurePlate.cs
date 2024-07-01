@@ -12,6 +12,8 @@ public class PressurePlate : MonoBehaviour
     Collider[] boxCollisions;
     float boxCheckRadius = 0.5f;
     public LayerMask boxLayer;
+    public DialogueTrigger dialogue; // Optional dialogue to trigger when the pressure plate is activated
+    private bool dialogueTriggered = false;
 
     void Update()
     {
@@ -23,6 +25,11 @@ public class PressurePlate : MonoBehaviour
                 PlaySound();
             } 
             else isEnabled = true;
+
+            if (dialogue != null && !dialogueTriggered && !isEnabled)
+            {
+                dialogue.TriggerDialogue();
+            }
         }
     }
     void Start()
