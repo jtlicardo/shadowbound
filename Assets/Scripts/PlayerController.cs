@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -49,6 +50,10 @@ public class PlayerController : MonoBehaviour
     private float securityCameraDetectionTimer = 0f;
     private bool isDetectedByCamera = false;
 
+    public Slider stealthMeter; // Stealth meter UI element (for security camera detection)
+    public float maxDetectionTime = 1.0f;
+    private float currentDetectionTime = 0f;
+
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
@@ -58,6 +63,12 @@ public class PlayerController : MonoBehaviour
 
         Debug.Log("Player Start: Setting initial checkpoint at player at " + transform.position);
         GameManager.Instance.SetCheckpoint(transform.position, transform.rotation, facingRight);
+
+        // Hide the stealth meter at the beginning of the game
+        if (stealthMeter != null)
+        {
+            stealthMeter.gameObject.SetActive(false);
+        }
 
         respawn();
     }
@@ -160,17 +171,25 @@ public class PlayerController : MonoBehaviour
             if (!isDetectedByCamera)
             {
                 isDetectedByCamera = true;
-                securityCameraDetectionTimer = Time.fixedTime;
+                currentDetectionTime = 0f;
+                ShowStealthMeter();
             }
             else if (Time.fixedTime - securityCameraDetectionTimer > 1.0f)
             {
-                die();
+                currentDetectionTime += Time.fixedDeltaTime;
+                UpdateStealthMeter();
+
+                if (currentDetectionTime >= maxDetectionTime)
+                {
+                    die();
+                }
             }
         }
         else
         {
             isDetectedByCamera = false;
-            securityCameraDetectionTimer = 0f;
+            currentDetectionTime = 0f;
+            HideStealthMeter();
         }
 
         myAnim.SetFloat("speed", Mathf.Abs(move));
@@ -184,6 +203,31 @@ public class PlayerController : MonoBehaviour
             Flip();
         }
     }
+
+    private void UpdateStealthMeter()
+    {
+        if (stealthMeter != null)
+        {
+            stealthMeter.value = 1 - (currentDetectionTime / maxDetectionTime);
+        }
+    }
+
+    private void ShowStealthMeter()
+    {
+        if (stealthMeter != null)
+        {
+            stealthMeter.gameObject.SetActive(true);
+        }
+    }
+
+    private void HideStealthMeter()
+    {
+        if (stealthMeter != null)
+        {
+            stealthMeter.gameObject.SetActive(false);
+        }
+    }
+
 
     private void PlaySound(AudioClip clip)
     {
