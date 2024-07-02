@@ -14,6 +14,10 @@ public class DialogueTrigger : MonoBehaviour
     private AudioSource audioSource;
     private bool hasTriggered = false;
 
+    // Static variables to keep track of the dialogue queue
+    private static bool isDialoguePlaying = false;
+    private static Queue<DialogueTrigger> dialogueQueue = new Queue<DialogueTrigger>();
+
     private void Start()
     {
         audioSource = GetComponent<AudioSource>();
@@ -36,13 +40,34 @@ public class DialogueTrigger : MonoBehaviour
     {
         if (!triggerOnce || !hasTriggered)
         {
-            StartCoroutine(PlayDialogueCoroutine());
+            StartCoroutine(QueueDialogueCoroutine());
             hasTriggered = true;
+        }
+    }
+
+    private IEnumerator QueueDialogueCoroutine()
+    {
+        dialogueQueue.Enqueue(this);
+
+        while (isDialoguePlaying || dialogueQueue.Peek() != this)
+        {
+            yield return null;
+        }
+
+        yield return StartCoroutine(PlayDialogueCoroutine());
+
+        dialogueQueue.Dequeue();
+
+        if (dialogueQueue.Count > 0)
+        {
+            dialogueQueue.Peek().TriggerDialogue();
         }
     }
 
     private IEnumerator PlayDialogueCoroutine()
     {
+        isDialoguePlaying = true;
+
         // Wait for the delay (if any)
         yield return new WaitForSeconds(triggerDelay);
 
@@ -63,5 +88,7 @@ public class DialogueTrigger : MonoBehaviour
 
         // Clear the text
         dialogueText.text = "";
+
+        isDialoguePlaying = false;
     }
 }
