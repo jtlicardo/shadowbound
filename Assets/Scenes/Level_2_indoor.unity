@@ -11786,9 +11786,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueCanvas: {fileID: 0}
   dialogueText: {fileID: 0}
-  textToDisplay: Gotta move quickly before they discover the breach.
+  dialogueEntries: []
   triggerOnce: 1
   triggerDelay: 0
+  textDisplayDuration: 1
 --- !u!82 &713532477
 AudioSource:
   m_ObjectHideFlags: 0
@@ -25121,7 +25122,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: e8b7498d174c4374da7efa0305721ad5, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 0.3
   m_Pitch: 1
@@ -25221,9 +25222,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueCanvas: {fileID: 1772670748}
   dialogueText: {fileID: 1559317821}
-  textToDisplay: Better find a vantage point to eavesdrop on them.
+  dialogueEntries:
+  - text: Better find a vantage point to eavesdrop on them.
+    audioClip: {fileID: 8300000, guid: e8b7498d174c4374da7efa0305721ad5, type: 3}
   triggerOnce: 1
   triggerDelay: 0
+  textDisplayDuration: 1
 --- !u!33 &1270797831
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -32691,7 +32695,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 2493edb5151ded54dbc1f1cd5aacf838, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 0.3
   m_Pitch: 1
@@ -32791,9 +32795,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueCanvas: {fileID: 1772670748}
   dialogueText: {fileID: 1559317821}
-  textToDisplay: I need to find that key downstairs to activate the platform.
+  dialogueEntries:
+  - text: I need to find that key downstairs to activate the platform.
+    audioClip: {fileID: 8300000, guid: 2493edb5151ded54dbc1f1cd5aacf838, type: 3}
   triggerOnce: 1
   triggerDelay: 0
+  textDisplayDuration: 1
 --- !u!33 &1651512437
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -43362,7 +43369,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 3d413d2c9a212244e8f4b0b2245bd37b, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 0.3
   m_Pitch: 1
@@ -43462,9 +43469,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueCanvas: {fileID: 1772670748}
   dialogueText: {fileID: 1559317821}
-  textToDisplay: There's got to be a blind spot in this laser security.
+  dialogueEntries:
+  - text: There's gotta be a blind spot in this laser security.
+    audioClip: {fileID: 8300000, guid: 3d413d2c9a212244e8f4b0b2245bd37b, type: 3}
   triggerOnce: 1
   triggerDelay: 0
+  textDisplayDuration: 1
 --- !u!33 &2125230326
 MeshFilter:
   m_ObjectHideFlags: 0
