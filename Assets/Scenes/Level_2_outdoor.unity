@@ -317,7 +317,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: f253e8a3d0ce11f44ace2f0642d706cf, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 0.3
   m_Pitch: 1
@@ -417,9 +417,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueCanvas: {fileID: 1984561584}
   dialogueText: {fileID: 468040586}
-  textToDisplay: Speed is key here.
+  dialogueEntries:
+  - text: Speed is key here.
+    audioClip: {fileID: 8300000, guid: f253e8a3d0ce11f44ace2f0642d706cf, type: 3}
   triggerOnce: 1
   triggerDelay: 0
+  textDisplayDuration: 1
 --- !u!33 &94407983
 MeshFilter:
   m_ObjectHideFlags: 0
