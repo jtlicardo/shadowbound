@@ -41982,7 +41982,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 771349053}
         m_MethodName: Restart
         m_Mode: 1
         m_Arguments:
@@ -70998,12 +70998,12 @@ Transform:
   m_LocalPosition: {x: 151, y: -6.2, z: -19.6}
   m_LocalScale: {x: 2.161027, y: 0.46308646, z: 2.161027}
   m_Children:
-  - {fileID: 818834599}
   - {fileID: 680042138}
   - {fileID: 123484224}
   - {fileID: 1025658500}
   - {fileID: 694046275}
   - {fileID: 1309232771}
+  - {fileID: 818834599}
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
