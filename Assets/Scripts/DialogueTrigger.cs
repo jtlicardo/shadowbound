@@ -3,28 +3,34 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
+[System.Serializable]
+public class DialogueEntry
+{
+    public string text;
+    public AudioClip audioClip;
+}
+
 public class DialogueTrigger : MonoBehaviour
 {
-    public Canvas dialogueCanvas;  // Reference to the Canvas
-    public TextMeshProUGUI dialogueText;  // Reference to the Text component on the canvas
-    public string textToDisplay = "Text to display";
+    public Canvas dialogueCanvas;
+    public TextMeshProUGUI dialogueText; // Text component on the canvas
+    public List<DialogueEntry> dialogueEntries = new List<DialogueEntry>();
     public bool triggerOnce = true;
-    public float triggerDelay = 0f;  // Optional delay before the dialogue is triggered
+    public float triggerDelay = 0f;
+    public float textDisplayDuration = 1f; // How much to display text after audio clip ends
 
     private AudioSource audioSource;
     private bool hasTriggered = false;
 
-    // Static variables to keep track of the dialogue queue
     private static bool isDialoguePlaying = false;
     private static Queue<DialogueTrigger> dialogueQueue = new Queue<DialogueTrigger>();
 
     private void Start()
     {
         audioSource = GetComponent<AudioSource>();
-
         if (audioSource == null)
         {
-            Debug.LogWarning("AudioSource component not found on " + gameObject.name);
+            audioSource = gameObject.AddComponent<AudioSource>();
         }
     }
 
@@ -48,47 +54,39 @@ public class DialogueTrigger : MonoBehaviour
     private IEnumerator QueueDialogueCoroutine()
     {
         dialogueQueue.Enqueue(this);
-
         while (isDialoguePlaying || dialogueQueue.Peek() != this)
         {
             yield return null;
         }
-
-        yield return StartCoroutine(PlayDialogueCoroutine());
-
+        yield return StartCoroutine(PlayDialogueSequenceCoroutine());
         dialogueQueue.Dequeue();
-
         if (dialogueQueue.Count > 0)
         {
             dialogueQueue.Peek().TriggerDialogue();
         }
     }
 
-    private IEnumerator PlayDialogueCoroutine()
+    private IEnumerator PlayDialogueSequenceCoroutine()
     {
         isDialoguePlaying = true;
 
-        // Wait for the delay (if any)
         yield return new WaitForSeconds(triggerDelay);
 
-        // Display the text
-        dialogueText.text = textToDisplay;
-
-        // Play the audio if available
-        if (audioSource != null && audioSource.clip != null)
+        foreach (DialogueEntry entry in dialogueEntries)
         {
-            audioSource.Play();
+            dialogueText.text = entry.text;
 
-            // Wait for the audio to finish
-            yield return new WaitForSeconds(audioSource.clip.length);
+            if (entry.audioClip != null)
+            {
+                audioSource.clip = entry.audioClip;
+                audioSource.Play();
+                yield return new WaitForSeconds(entry.audioClip.length);
+            }
+
+            yield return new WaitForSeconds(textDisplayDuration);
         }
 
-        // Keep the text displayed for 1 second after the audio has finished
-        yield return new WaitForSeconds(1f);
-
-        // Clear the text
         dialogueText.text = "";
-
         isDialoguePlaying = false;
     }
 }
