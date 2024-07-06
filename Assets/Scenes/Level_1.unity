@@ -2642,7 +2642,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 0aee17b11a9fccb46a8dfed2cb02044d, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 0.3
   m_Pitch: 1
@@ -2742,9 +2742,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueCanvas: {fileID: 1498069323}
   dialogueText: {fileID: 967884833}
-  textToDisplay: Looks like I need to use that box to shut down the laser grid.
+  dialogueEntries:
+  - text: Look like I need to use that box to shut down the laser grid.
+    audioClip: {fileID: 8300000, guid: 0aee17b11a9fccb46a8dfed2cb02044d, type: 3}
   triggerOnce: 1
   triggerDelay: 1
+  textDisplayDuration: 1
 --- !u!33 &302585804
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -4424,7 +4427,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 8cfc81ff6fb473849a1b05d99d6194eb, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 0.3
   m_Pitch: 1
@@ -4524,9 +4527,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueCanvas: {fileID: 1498069323}
   dialogueText: {fileID: 967884833}
-  textToDisplay: Guard ahead. Can't be spotted or it's over.
+  dialogueEntries:
+  - text: Guard ahead. Can't be spotted or it's over.
+    audioClip: {fileID: 8300000, guid: 8cfc81ff6fb473849a1b05d99d6194eb, type: 3}
   triggerOnce: 1
   triggerDelay: 0
+  textDisplayDuration: 1
 --- !u!33 &457597669
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -5252,7 +5258,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 7dd229fe401f7bd49b093e4ae8eee3f7, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 0.3
   m_Pitch: 1
@@ -5352,9 +5358,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueCanvas: {fileID: 1498069323}
   dialogueText: {fileID: 967884833}
-  textToDisplay: Last plate activated. Time to backtrack and find the exit downstairs.
+  dialogueEntries:
+  - text: Last plate activated. Time to backtrack and find the exit downstairs.
+    audioClip: {fileID: 8300000, guid: 7dd229fe401f7bd49b093e4ae8eee3f7, type: 3}
   triggerOnce: 1
   triggerDelay: 0
+  textDisplayDuration: 1
 --- !u!33 &476558764
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -13235,7 +13244,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 95c7de8055f3c234eaf6c38c8fca8d21, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 0.3
   m_Pitch: 1
@@ -13335,9 +13344,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueCanvas: {fileID: 1498069323}
   dialogueText: {fileID: 967884833}
-  textToDisplay: Camera ahead. It takes about a second to detect me once I'm in view.
+  dialogueEntries:
+  - text: Camera ahead. It takes about a second to detect me once I'm in view.
+    audioClip: {fileID: 8300000, guid: 95c7de8055f3c234eaf6c38c8fca8d21, type: 3}
   triggerOnce: 1
   triggerDelay: 0
+  textDisplayDuration: 1
 --- !u!33 &1121598385
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -25083,7 +25095,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: d2b403e47c83a674a88a4539f57e049d, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 0.3
   m_Pitch: 1
@@ -25183,9 +25195,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueCanvas: {fileID: 1498069323}
   dialogueText: {fileID: 967884833}
-  textToDisplay: Fantastic. New threat - a drone. It cannot detect me if I stay still.
+  dialogueEntries:
+  - text: Fantastic. New threat, a drone. It cannot detect me if I stay still.
+    audioClip: {fileID: 8300000, guid: d2b403e47c83a674a88a4539f57e049d, type: 3}
   triggerOnce: 1
   triggerDelay: 0
+  textDisplayDuration: 1
 --- !u!33 &1887771240
 MeshFilter:
   m_ObjectHideFlags: 0
