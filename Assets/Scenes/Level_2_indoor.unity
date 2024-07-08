@@ -11784,9 +11784,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 429d67bf2947d0849927e8ba0055141c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueCanvas: {fileID: 0}
-  dialogueText: {fileID: 0}
-  dialogueEntries: []
+  dialogueCanvas: {fileID: 1772670748}
+  dialogueText: {fileID: 1559317821}
+  dialogueEntries:
+  - text: Gotta move quickly before they discover the breach.
+    audioClip: {fileID: 8300000, guid: 964242cc4083b6f478a2c28f28734b77, type: 3}
   triggerOnce: 1
   triggerDelay: 0
   textDisplayDuration: 1
@@ -11800,7 +11802,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 964242cc4083b6f478a2c28f28734b77, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -23063,12 +23065,12 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 8cf152a0a06b3dc47a7c6d40918d95a9,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -10.7
+      value: -11
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8cf152a0a06b3dc47a7c6d40918d95a9,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.3
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8cf152a0a06b3dc47a7c6d40918d95a9,
         type: 3}
