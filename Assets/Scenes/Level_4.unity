@@ -10822,12 +10822,12 @@ PrefabInstance:
     - target: {fileID: 2285680492609567170, guid: 2b28d1f63ff60bb47a5faa362eed35a8,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.2
+      value: 5.7
       objectReference: {fileID: 0}
     - target: {fileID: 2285680492609567170, guid: 2b28d1f63ff60bb47a5faa362eed35a8,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.8
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 2285680492609567170, guid: 2b28d1f63ff60bb47a5faa362eed35a8,
         type: 3}
@@ -82039,7 +82039,7 @@ MonoBehaviour:
   dialogueText: {fileID: 1557107013}
   dialogueEntries:
   - text: Exit gate opened.
-    audioClip: {fileID: 8300000, guid: 0be09c0f55476af4f9bd6545162b8ff6, type: 3}
+    audioClip: {fileID: 8300000, guid: 952a6468350f74b489f768bb87f1a4a7, type: 3}
   triggerOnce: 1
   triggerDelay: 1
   textDisplayDuration: 1
