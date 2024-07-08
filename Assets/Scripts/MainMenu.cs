@@ -39,11 +39,10 @@ public class MainMenu : MonoBehaviour
         // Wait until the scene fully loads
         while (!asyncLoad.isDone)
         {
+            // Reset the volume for the new scene
+            AudioListener.volume = startVolume;
             yield return null;
         }
-
-        // Reset the volume for the new scene
-        AudioListener.volume = startVolume;
     }
 
     public void QuitGame()
