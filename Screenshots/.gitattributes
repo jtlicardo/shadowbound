@@ -1,0 +1,4 @@
+# Undo LFS tracking for image files in this folder
+*.jpg -filter -diff -merge -text
+*.jpeg -filter -diff -merge -text
+*.png -filter -diff -merge -text
