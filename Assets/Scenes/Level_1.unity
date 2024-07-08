@@ -2743,7 +2743,7 @@ MonoBehaviour:
   dialogueCanvas: {fileID: 1498069323}
   dialogueText: {fileID: 967884833}
   dialogueEntries:
-  - text: Look like I need to use that box to shut down the laser grid.
+  - text: Looks like I need to use that box to shut down the laser grid.
     audioClip: {fileID: 8300000, guid: 0aee17b11a9fccb46a8dfed2cb02044d, type: 3}
   triggerOnce: 1
   triggerDelay: 1
