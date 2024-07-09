@@ -2,7 +2,7 @@
 
 Project for the [**Design and Programming of Computer Games**](https://fipu.unipu.hr/fipu/en/course/dapocg) course (2023./2024.)
 
-[**Full Gameplay**](https://youtu.be/UZR87C1khYw)  
+[**Full Gameplay**](https://youtu.be/Acd-PHO8JPA)  
 
 [**Juraj Dobrila University of Pula**](https://www.unipu.hr/)  
 [**Faculty of Informatics**](https://fipu.unipu.hr/)  
